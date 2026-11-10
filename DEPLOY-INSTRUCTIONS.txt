@@ -1,0 +1,25 @@
+BAKED BY NETTA — AUTOMATIC REVIEWS
+
+WHAT THIS VERSION DOES
+- Saves reviews in Netlify Blobs.
+- Automatically displays saved reviews in the Reviews section.
+- Supports optional JPG, PNG, WEBP, and GIF photos (max 3 MB).
+- Includes spam protection: hidden honeypot field, input validation, and a limit of 5 reviews per IP address per hour.
+- Genuine 1-star reviews are NOT blocked or hidden. The spam checks apply equally to every rating.
+
+IMPORTANT NETLIFY REQUIREMENTS
+- Deploy this whole project folder (the ZIP contents, preserving the netlify/ folder structure) to the existing Baked By Netta Netlify site.
+- Netlify must install the @netlify/blobs dependency during deployment. If your site is deployed with Netlify Drop and it does not install dependencies/build functions, connect the site to a Git repository or use Netlify's supported deploy workflow that builds Functions.
+- Netlify Blobs require a deployed Netlify site and are available through Netlify Functions. The function endpoints are:
+  /.netlify/functions/submit-review
+  /.netlify/functions/list-reviews
+  /.netlify/functions/review-photo
+
+AFTER DEPLOYMENT TEST
+1. Open the live site and submit a test review.
+2. Confirm the thank-you message appears and the review appears in the Reviews section.
+3. Reload the page and confirm the review remains.
+4. Test an optional photo.
+5. Check Netlify Functions logs if any endpoint returns an error.
+
+The old Netlify Forms submissions are not automatically imported into the new review database. They remain visible in Netlify Forms.

@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f5b4ca"><meta name="description" content="Baked By Netta — homemade cookies and cinnamon rolls, baked with love.">
+<title>Baked By Netta | Homemade with Love</title>
+<style>
+:root{--pink:#f3a9c1;--pale:#ffe0e9;--brown:#542016;--cream:#fff8ed;--berry:#b94365}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:var(--brown);background-color:var(--cream);background-image:linear-gradient(45deg,#783a2c 25%,transparent 25%),linear-gradient(-45deg,#783a2c 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#783a2c 75%),linear-gradient(-45deg,transparent 75%,#783a2c 75%);background-size:34px 34px;background-position:0 0,0 17px,17px -17px,-17px 0;font-family:Georgia,serif}
+.wrap{max-width:1080px;margin:24px auto;background:var(--cream);border:5px solid var(--pink);outline:2px dashed #a84d4b;outline-offset:-13px;box-shadow:0 12px 35px #48201630;overflow:hidden}
+header{text-align:center;padding:58px 20px 38px;background:radial-gradient(ellipse at center,#fffdf7 0 55%,#ffe9ef 100%);border-bottom:5px solid var(--pink)}
+.kicker{font:700 .8rem Arial,sans-serif;letter-spacing:.25em;text-transform:uppercase;color:var(--berry)}
+h1{font-size:clamp(3rem,8vw,6.3rem);line-height:.95;margin:14px 0;color:var(--brown);font-style:italic;letter-spacing:-.06em}
+.tag{font-size:clamp(1.1rem,3vw,1.6rem);font-style:italic;margin:15px 0 0}
+nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;padding:17px;background:var(--pale);border-bottom:2px dashed var(--berry)}
+nav a,.btn{display:inline-block;text-decoration:none;color:var(--brown);font:bold .92rem Arial,sans-serif;padding:12px 18px;border:2px solid var(--berry);border-radius:999px;background:#fff9f5}
+nav a:hover,.btn:hover{background:var(--pale)}
+section{padding:42px 28px}.intro{text-align:center;background:#fffaf3}
+.intro h2,.section-title{font-size:clamp(2rem,5vw,3.3rem);font-style:italic;margin:0 0 12px;text-align:center}
+.intro p{font-size:1.15rem;line-height:1.7;max-width:700px;margin:0 auto 22px}
+.menu-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:900px;margin:26px auto 0}
+.menu-card{border:3px solid var(--pink);border-radius:24px;padding:25px;background:#fffaf3;box-shadow:5px 6px 0 #f9d7e2}
+.menu-card h3{text-align:center;font-size:2rem;font-style:italic;margin:0 0 20px;background:var(--pale);border-radius:50px;padding:8px}
+.subhead{font-weight:bold;font-style:italic;font-size:1.2rem;margin:16px 0 8px;color:#8d3b48}
+.price-row{display:flex;justify-content:space-between;gap:15px;border-bottom:1px dotted #a76b5c;padding:9px 2px;font-size:1.12rem}
+.flavors{text-align:center;line-height:1.9;margin-top:18px}.note{text-align:center;font-style:italic;color:#8d3b48;margin-top:16px}
+.coming{margin:30px auto 0;max-width:800px;text-align:center;padding:28px;border:3px dashed var(--berry);border-radius:50px;background:var(--pale)}
+.coming strong{display:block;font-size:clamp(1.8rem,5vw,3rem);font-style:italic}
+.order{background:#fff3f6;text-align:center}.order-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:900px;margin:25px auto}
+.order-card{background:#fffaf3;border:2px solid var(--pink);border-radius:20px;padding:22px 15px}.order-card h3{font-size:1.35rem;margin:5px 0 10px}
+.order-card p{line-height:1.5;min-height:48px}.order-card .btn{margin-top:8px;background:var(--pale)}
+.pay{text-align:center;background:#fffaf3}.pay p{font-size:1.1rem;line-height:1.6}
+.tiktok{text-align:center;background:var(--pale)}footer{text-align:center;padding:28px 18px;background:#f6c2d3;border-top:4px solid var(--berry);font-style:italic;font-size:1.05rem}
+.small{font: .85rem Arial,sans-serif;opacity:.8}
+@media(max-width:700px){.wrap{margin:0;border-width:3px;outline-offset:-10px}.menu-grid,.order-cards{grid-template-columns:1fr}section{padding:32px 18px}.menu-card{padding:20px}.order-card p{min-height:0}}
+
+/* Reviews section — styled to match Baked By Netta */
+.reviews{background:#fffaf3;text-align:center}
+.reviews-intro{max-width:720px;margin:0 auto 24px;line-height:1.6;font-size:1.08rem}
+.review-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;max-width:850px;margin:25px auto}
+.review-card{background:#fff3f6;border:2px solid var(--pink);border-radius:22px;padding:22px;text-align:left;box-shadow:4px 5px 0 #f9d7e2}
+.review-stars{color:#b94365;letter-spacing:.12em;font:1.25rem Arial,sans-serif}
+.review-card p{line-height:1.6;margin:10px 0}
+.review-status{max-width:720px;margin:16px auto;color:#8d3b48;font: .95rem Arial,sans-serif}.spam-trap{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}.review-photo{display:block;max-width:100%;max-height:260px;object-fit:cover;border-radius:14px;border:2px solid var(--pink);margin:12px auto 0}
+.review-form{max-width:720px;margin:28px auto 0;padding:26px;background:#fff3f6;border:3px solid var(--pink);border-radius:24px;text-align:left;box-shadow:5px 6px 0 #f9d7e2}
+.review-form h3{text-align:center;font-size:1.8rem;font-style:italic;margin:0 0 8px}
+.review-form .form-note{text-align:center;line-height:1.5;margin:0 0 20px}
+.review-form label{display:block;font-weight:bold;margin:15px 0 7px;color:#8d3b48}
+.review-form input[type=text],.review-form textarea,.review-form input[type=file]{width:100%;font:1rem Georgia,serif;color:var(--brown);background:#fffaf3;border:2px solid var(--pink);border-radius:12px;padding:12px}
+.review-form textarea{min-height:120px;resize:vertical}
+.review-form .rating-options{display:flex;gap:16px;flex-wrap:wrap;background:#fffaf3;border:2px solid var(--pink);border-radius:12px;padding:12px}
+.review-form .rating-options label{display:flex;align-items:center;gap:5px;margin:0;font-weight:normal}
+.review-form button{cursor:pointer;font-family:Arial,sans-serif}
+.review-form .submit-row{text-align:center;margin-top:20px}
+.review-form .privacy-note{font:.82rem Arial,sans-serif;text-align:center;line-height:1.5;opacity:.8;margin:14px 0 0}
+@media(max-width:700px){.review-grid{grid-template-columns:1fr}.review-form{padding:20px}}
+</style></head><body><div class="wrap">
+<header><div class="kicker">♡ Small-batch homemade treats ♡</div><h1>Baked By Netta</h1><p class="tag">Homemade with love ♥</p></header>
+<nav><a href="#menu">Our Menu</a><a href="#order">How to Order</a><a href="#payment">Payments</a><a href="#reviews">Reviews</a><a href="#follow">Follow Along</a></nav>
+<section class="intro"><h2>Sweet treats, made with love</h2><p>Welcome to Baked By Netta! From cookies to cinnamon rolls, every treat is made with care. Take a look at the menu and reach out to place your order.</p><a class="btn" href="#menu">♡ Explore the Menu ♡</a></section>
+<section id="menu"><h2 class="section-title">♡ The Menu ♡</h2><div class="menu-grid">
+<article class="menu-card"><h3>Cookies</h3>
+<div class="price-row"><span>1 cookie</span><strong>$3</strong></div><div class="price-row"><span>12 cookies</span><strong>$16</strong></div><div class="price-row"><span>24 cookies</span><strong>$25</strong></div>
+<div class="note">Big batches = more sweetness!</div><div class="flavors">♥ Chocolate Chip<br>♥ Sugar<br>♥ Churro</div></article>
+<article class="menu-card"><h3>Cinnamon Rolls</h3><div class="subhead">Classic Cinnamon Rolls</div>
+<div class="price-row"><span>1 roll</span><strong>$5</strong></div><div class="price-row"><span>2 rolls</span><strong>$9</strong></div><div class="price-row"><span>4 rolls</span><strong>$18</strong></div>
+<div class="subhead">Biscoff Cinnamon Rolls</div><div class="price-row"><span>1 roll</span><strong>$6</strong></div><div class="price-row"><span>2 rolls</span><strong>$12</strong></div><div class="price-row"><span>4 rolls</span><strong>$19</strong></div>
+<div class="note">Same sweet rolls, just a little more Biscoff magic!</div></article></div>
+<div class="coming"><strong>More Menu Items</strong><span>♡ COMING SOON ♡</span></div></section>
+<section class="order" id="order"><h2 class="section-title">♡ Ready to Order? ♡</h2><p>To place an order, please text Netta or send a direct message through Hotplate.</p>
+<div class="order-cards"><div class="order-card"><h3>Text to Order</h3><p>Send a text with the treats and quantities you'd like.</p><a class="btn" href="sms:+15087945595">Text 508-794-5595</a></div>
+<div class="order-card"><h3>Hotplate Message</h3><p>Send a direct message through the Baked By Netta Hotplate page.</p><a class="btn" href="https://www.hotplate.com/bakedbynetta" target="_blank" rel="noopener">Message on Hotplate</a></div>
+</div></section>
+<section class="pay" id="payment"><h2 class="section-title">♡ Payments ♡</h2><p>PayPal and Venmo are for <strong>payments only</strong>. Please place your order by text or Hotplate message first.</p><a class="btn" href="https://www.paypal.me/Robynettaa" target="_blank" rel="noopener">Pay with PayPal</a> <a class="btn" href="https://www.venmo.com/u/BakedByNetta_" target="_blank" rel="noopener">Pay with Venmo</a></section>
+
+<section class="reviews" id="reviews">
+<h2 class="section-title">♡ Sweet Words from Customers ♡</h2>
+<p class="reviews-intro">Have you tried something from Baked By Netta? I’d love to hear what you think! Share your experience and, if you’d like, a photo of your treats.</p>
+<div class="review-status" id="review-status" role="status" aria-live="polite">Loading customer reviews…</div>
+<div class="review-grid" id="review-grid" aria-live="polite"></div>
+<form class="review-form" id="customer-review-form" enctype="multipart/form-data">
+  <h3>♡ Leave a Review ♡</h3>
+  <p class="form-note">Tell us about your treats! Photo uploads are optional. Reviews appear automatically after spam checks.</p>
+  <label for="review-name">Your name</label>
+  <input id="review-name" type="text" name="customer-name" maxlength="80" autocomplete="name" placeholder="Your name" required>
+  <label>Your rating</label>
+  <div class="rating-options">
+    <label><input type="radio" name="rating" value="5" required> ★★★★★</label>
+    <label><input type="radio" name="rating" value="4"> ★★★★</label>
+    <label><input type="radio" name="rating" value="3"> ★★★</label>
+    <label><input type="radio" name="rating" value="2"> ★★</label>
+    <label><input type="radio" name="rating" value="1"> ★</label>
+  </div>
+  <label for="review-message">Your review</label>
+  <textarea id="review-message" name="review" maxlength="1500" placeholder="What did you think?..." required></textarea>
+  <label for="review-photo">Add a photo (optional)</label>
+  <input id="review-photo" type="file" name="review-photo" accept="image/jpeg,image/png,image/webp,image/gif">
+  <div class="spam-trap" aria-hidden="true">
+    <label for="website-field">Leave this field empty</label>
+    <input id="website-field" type="text" name="website" tabindex="-1" autocomplete="off">
+  </div>
+  <div class="submit-row"><button class="btn" id="review-submit" type="submit">♡ Submit My Review ♡</button></div>
+  <p class="privacy-note">Reviews appear automatically after basic spam checks. Please only upload photos you have permission to share.</p>
+</form>
+</section>
+<section class="tiktok" id="follow"><h2 class="section-title">♡ Follow My TikTok ♡</h2><p>Follow along for fresh bakes, sweet treats, and updates!</p><a class="btn" href="https://www.tiktok.com/@_bakedbynetta" target="_blank" rel="noopener">Follow @_bakedbynetta</a></section>
+<footer>Thank you for supporting my small business! ♥<div class="small">Baked By Netta · Homemade with love</div></footer>
+</div>
+<script>
+(() => {
+  const grid = document.getElementById('review-grid');
+  const status = document.getElementById('review-status');
+  const form = document.getElementById('customer-review-form');
+  const submit = document.getElementById('review-submit');
+  const stars = n => '★'.repeat(Number(n)) + '☆'.repeat(5 - Number(n));
+
+  function safeText(tag, text, className) {
+    const el = document.createElement(tag);
+    if (className) el.className = className;
+    el.textContent = text;
+    return el;
+  }
+
+  function renderReviews(items) {
+    grid.replaceChildren();
+    if (!items.length) {
+      grid.appendChild(safeText('p', '♡ Be the first to leave a review ♡'));
+      return;
+    }
+    items.forEach(item => {
+      const card = document.createElement('article');
+      card.className = 'review-card';
+      card.appendChild(safeText('div', stars(item.rating), 'review-stars'));
+      card.appendChild(safeText('strong', item.name));
+      card.appendChild(safeText('p', item.review));
+      if (item.photoUrl) {
+        const img = document.createElement('img');
+        img.className = 'review-photo';
+        img.src = item.photoUrl;
+        img.alt = 'Photo shared with a customer review';
+        img.loading = 'lazy';
+        card.appendChild(img);
+      }
+      grid.appendChild(card);
+    });
+  }
+
+  async function loadReviews() {
+    try {
+      const response = await fetch('/.netlify/functions/list-reviews', {headers:{'Accept':'application/json'}});
+      if (!response.ok) throw new Error('Could not load reviews');
+      const data = await response.json();
+      renderReviews(data.reviews || []);
+      status.textContent = (data.reviews || []).length ? '' : 'No reviews yet — be the first!';
+    } catch (err) {
+      status.textContent = 'Reviews are temporarily unavailable. Please try again soon.';
+    }
+  }
+
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    const data = new FormData(form);
+    const file = data.get('review-photo');
+    const payload = {
+      name: String(data.get('customer-name') || '').trim(),
+      rating: Number(data.get('rating')),
+      review: String(data.get('review') || '').trim(),
+      website: String(data.get('website') || '')
+    };
+    if (file && file.size) {
+      if (file.size > 3 * 1024 * 1024) {
+        status.textContent = 'Please choose a photo smaller than 3 MB.';
+        return;
+      }
+      payload.photoName = file.name;
+      payload.photoType = file.type;
+      payload.photoData = await new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(String(reader.result).split(',')[1] || '');
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+    submit.disabled = true;
+    submit.textContent = 'Submitting…';
+    status.textContent = '';
+    try {
+      const response = await fetch('/.netlify/functions/submit-review', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(payload)
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(result.error || 'Your review could not be submitted.');
+      form.reset();
+      status.textContent = 'Thank you! Your review has been published. ♥';
+      await loadReviews();
+    } catch (err) {
+      status.textContent = err.message || 'Something went wrong. Please try again.';
+    } finally {
+      submit.disabled = false;
+      submit.textContent = '♡ Submit My Review ♡';
+    }
+  });
+
+  loadReviews();
+})();
+</script>
+
+</body></html>
