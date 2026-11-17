@@ -54,11 +54,47 @@ section{padding:42px 28px}.intro{text-align:center;background:#fffaf3}
 .review-form .submit-row{text-align:center;margin-top:20px}
 .review-form .privacy-note{font:.82rem Arial,sans-serif;text-align:center;line-height:1.5;opacity:.8;margin:14px 0 0}
 @media(max-width:700px){.review-grid{grid-template-columns:1fr}.review-form{padding:20px}}
+
+/* Pink satin + chocolate brown redesign */
+:root{--pink:#efa9c1;--pale:#f9dce6;--brown:#4a2119;--cream:#fffaf7;--berry:#a95770}
+body{background:radial-gradient(ellipse at 15% 15%,#fff8fa 0,transparent 38%),radial-gradient(ellipse at 85% 80%,#f3bfd0 0,transparent 42%),linear-gradient(135deg,#f8dce5,#f4c2d2 55%,#fff0f4);background-attachment:fixed}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;background:repeating-linear-gradient(115deg,transparent 0 20px,#fff 21px 22px,transparent 24px 48px)}
+.wrap{max-width:1180px;margin:0 auto;background:#fffaf7e8;border:0;outline:0;box-shadow:0 0 55px #54201622}
+.topline{background:#35160f;color:#ffe7ef;text-align:center;padding:12px;font:italic 1rem Georgia,serif;letter-spacing:.14em;border-bottom:3px solid var(--pink)}
+header{padding:48px 20px 34px;background:linear-gradient(135deg,#fff4f7,#f7d9e4);border:0}
+h1{font-family:'Brush Script MT','Segoe Script',cursive;font-size:clamp(3.6rem,9vw,7rem);font-weight:500;letter-spacing:-.035em;text-shadow:2px 3px #fff}
+.tag{font-size:clamp(1.2rem,3vw,1.7rem);color:#7a3a43}
+nav{background:#35160f;border-top:1px solid #9d5b54;border-bottom:4px solid var(--pink);gap:8px}
+nav a{color:#ffeaf0;border:0;background:transparent;box-shadow:none}
+nav a:hover{background:#ffffff20}
+section{padding:48px 28px}
+.intro{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:24px;text-align:center;background:linear-gradient(120deg,#fff7f8,#f7d6e2);min-height:320px}
+.intro h2,.section-title{font-family:'Brush Script MT','Segoe Script',cursive;font-weight:500;color:#4a2119}
+.intro h2{font-size:clamp(2.5rem,5vw,4rem)}.intro p{font-size:1.13rem;line-height:1.8}
+.intro:after{content:"♡  Freshly baked with love  ♡";display:flex;align-items:center;justify-content:center;min-height:230px;margin:0 auto;width:min(100%,380px);border:9px solid #fff;border-radius:28px;outline:2px solid #e8a8bd;background:radial-gradient(ellipse at 50% 30%,#fff6f8,#f1b9cc 75%);box-shadow:0 12px 28px #54201620;color:#68382e;font:italic 1.8rem Georgia,serif}
+.btn{background:linear-gradient(145deg,#fff8fa,#f4c8d7);border-color:#b96f82;color:#4a2119;box-shadow:0 3px 0 #b96f8240}
+.menu-grid{grid-template-columns:repeat(6,minmax(0,1fr));max-width:1000px;gap:20px}
+.menu-card{grid-column:span 2;border:1px solid #e7a5ba;border-radius:28px;background:linear-gradient(145deg,#fce7ee,#f7cfdd);box-shadow:0 14px 35px #54201618;text-align:center}
+.menu-card:nth-child(4),.menu-card:nth-child(5){grid-column:span 3}
+.menu-card:before{content:"♡";display:block;color:#b65e7a;font-size:1.4rem;margin:-8px 0 6px}
+.menu-card h3{font-family:'Brush Script MT','Segoe Script',cursive;font-weight:500;color:#59291f}
+.section-title{font-size:clamp(2.5rem,5vw,4rem)}
+.coming{border:1px solid #c67b91;border-radius:50px;background:linear-gradient(120deg,#f9d8e3,#fff0f4);box-shadow:0 12px 30px #54201614}
+.coming strong{font-family:'Brush Script MT','Segoe Script',cursive;font-weight:500}
+.order{background:linear-gradient(120deg,#f9e0e8,#fff7f9)}
+.order-card,.review-card,.review-form{border:1px solid #e7a5ba;box-shadow:0 12px 30px #54201614}
+.order-card{background:#fff9fa;border-radius:24px}
+.order-card h3,.review-form h3{font-family:'Brush Script MT','Segoe Script',cursive;font-weight:500}
+.order-card .btn{background:#35160f;color:#ffeaf0}
+.pay,.reviews{background:#fffaf7}.tiktok{background:linear-gradient(120deg,#f4c8d7,#fce8ee)}
+footer{background:#35160f;color:#ffeaf0;border-top:5px solid #efa9c1;padding:34px 18px}
+@media(max-width:760px){.intro{grid-template-columns:1fr}.intro:after{min-height:180px;width:85%}.menu-grid{grid-template-columns:1fr}.menu-card,.menu-card:nth-child(4),.menu-card:nth-child(5){grid-column:auto}section{padding:38px 18px}}
+
 </style></head><body><div class="wrap">
-<header><div class="kicker">♡ Small-batch homemade treats ♡</div><h1>Baked By Netta</h1><p class="tag">Homemade with love ♥</p></header>
+<div class="topline">♡ &nbsp; SWEET TREATS. BIG LOVE. &nbsp; ♡</div><header><div class="kicker">♡ Small-batch homemade treats ♡</div><h1>Baked By Netta ♡</h1><p class="tag">Homemade with love, one sweet bite at a time</p></header>
 <nav><a href="#menu">Our Menu</a><a href="#order">How to Order</a><a href="#payment">Payments</a><a href="#reviews">Reviews</a><a href="#follow">Follow Along</a></nav>
-<section class="intro"><h2>Sweet treats, made with love</h2><p>Welcome to Baked By Netta! From cookies to cinnamon rolls, every treat is made with care. Take a look at the menu and reach out to place your order.</p><a class="btn" href="#menu">♡ Explore the Menu ♡</a></section>
-<section id="menu"><h2 class="section-title">♡ The Menu ♡</h2><div class="menu-grid">
+<section class="intro"><div><h2>Homemade Treats,<br>Made with Love ♡</h2><p>From cookies to cinnamon rolls, every bite is a sweet reminder that you’re special.</p><a class="btn" href="#order">Order Now ♡</a></div></section>
+<section id="menu"><h2 class="section-title">♡ Menu ♡</h2><div class="menu-grid">
 <article class="menu-card"><h3>Cookies</h3>
 <div class="price-row"><span>4 cookies</span><strong>$6</strong></div><div class="price-row"><span>6 cookies</span><strong>$9</strong></div><div class="price-row"><span>12 cookies</span><strong>$16</strong></div>
 <div class="note">Big batches = more sweetness!</div><div class="flavors">♥ Chocolate Chip<br>♥ Sugar<br>♥ Churro</div></article>
@@ -103,7 +139,7 @@ section{padding:42px 28px}.intro{text-align:center;background:#fffaf3}
 </form>
 </section>
 <section class="tiktok" id="follow"><h2 class="section-title">♡ Follow My TikTok ♡</h2><p>Follow along for fresh bakes, sweet treats, and updates!</p><a class="btn" href="https://www.tiktok.com/@_bakedbynetta" target="_blank" rel="noopener">Follow @_bakedbynetta</a></section>
-<footer>Thank you for supporting my small business! ♥<div class="small">Baked By Netta · Homemade with love</div></footer>
+<footer><div style="font:2.2rem 'Brush Script MT','Segoe Script',cursive">Baked By Netta ♡</div><div class="small">SWEET TREATS. BIG LOVE. ♡</div><div style="margin-top:18px;font-size:1rem">Thank you for supporting my small business! ♡</div></footer>
 </div>
 <script>
 (() => {
