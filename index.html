@@ -71,7 +71,7 @@ section{padding:48px 28px}
 .intro{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:24px;text-align:center;background:linear-gradient(120deg,#fff7f8,#f7d6e2);min-height:320px}
 .intro h2,.section-title{font-family:'Brush Script MT','Segoe Script',cursive;font-weight:500;color:#4a2119}
 .intro h2{font-size:clamp(2.5rem,5vw,4rem)}.intro p{font-size:1.13rem;line-height:1.8}
-.intro:after{content:"♡  Freshly baked with love  ♡";display:flex;align-items:center;justify-content:center;min-height:230px;margin:0 auto;width:min(100%,380px);border:9px solid #fff;border-radius:28px;outline:2px solid #e8a8bd;background:radial-gradient(ellipse at 50% 30%,#fff6f8,#f1b9cc 75%);box-shadow:0 12px 28px #54201620;color:#68382e;font:italic 1.8rem Georgia,serif}
+.hero-photo{width:min(100%,430px);margin:auto;padding:10px;border:8px solid #fff;border-radius:28px;outline:2px solid #e8a8bd;background:linear-gradient(145deg,#f9dce6,#f1b9cc);box-shadow:0 12px 28px #54201620;transform:rotate(1deg)}.hero-photo img{display:block;width:100%;height:auto;max-height:300px;object-fit:cover;border-radius:15px}
 .btn{background:linear-gradient(145deg,#fff8fa,#f4c8d7);border-color:#b96f82;color:#4a2119;box-shadow:0 3px 0 #b96f8240}
 .menu-grid{grid-template-columns:repeat(6,minmax(0,1fr));max-width:1000px;gap:20px}
 .menu-card{grid-column:span 2;border:1px solid #e7a5ba;border-radius:28px;background:linear-gradient(145deg,#fce7ee,#f7cfdd);box-shadow:0 14px 35px #54201618;text-align:center}
@@ -88,12 +88,12 @@ section{padding:48px 28px}
 .order-card .btn{background:#35160f;color:#ffeaf0}
 .pay,.reviews{background:#fffaf7}.tiktok{background:linear-gradient(120deg,#f4c8d7,#fce8ee)}
 footer{background:#35160f;color:#ffeaf0;border-top:5px solid #efa9c1;padding:34px 18px}
-@media(max-width:760px){.intro{grid-template-columns:1fr}.intro:after{min-height:180px;width:85%}.menu-grid{grid-template-columns:1fr}.menu-card,.menu-card:nth-child(4),.menu-card:nth-child(5){grid-column:auto}section{padding:38px 18px}}
+@media(max-width:760px){.intro{grid-template-columns:1fr}.hero-photo{width:85%}.hero-photo img{max-height:240px}.menu-grid{grid-template-columns:1fr}.menu-card,.menu-card:nth-child(4),.menu-card:nth-child(5){grid-column:auto}section{padding:38px 18px}}
 
 </style></head><body><div class="wrap">
 <div class="topline">♡ &nbsp; SWEET TREATS. BIG LOVE. &nbsp; ♡</div><header><div class="kicker">♡ Small-batch homemade treats ♡</div><h1>Baked By Netta ♡</h1><p class="tag">Homemade with love, one sweet bite at a time</p></header>
 <nav><a href="#menu">Our Menu</a><a href="#order">How to Order</a><a href="#payment">Payments</a><a href="#reviews">Reviews</a><a href="#follow">Follow Along</a></nav>
-<section class="intro"><div><h2>Homemade Treats,<br>Made with Love ♡</h2><p>From cookies to cinnamon rolls, every bite is a sweet reminder that you’re special.</p><a class="btn" href="#order">Order Now ♡</a></div></section>
+<section class="intro"><div><h2>Homemade Treats,<br>Made with Love ♡</h2><p>From cookies to cinnamon rolls, every bite is a sweet reminder that you’re special.</p><a class="btn" href="#order">Order Now ♡</a></div><div class="hero-photo"><img src="/images/netta-cookie.jpg" alt="Baked By Netta chocolate chip cookies"></div></section>
 <section id="menu"><h2 class="section-title">♡ Menu ♡</h2><div class="menu-grid">
 <article class="menu-card"><h3>Cookies</h3>
 <div class="price-row"><span>4 cookies</span><strong>$6</strong></div><div class="price-row"><span>6 cookies</span><strong>$9</strong></div><div class="price-row"><span>12 cookies</span><strong>$16</strong></div>
