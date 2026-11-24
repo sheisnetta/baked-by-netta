@@ -90,9 +90,25 @@ section{padding:48px 28px}
 footer{background:#35160f;color:#ffeaf0;border-top:5px solid #efa9c1;padding:34px 18px}
 @media(max-width:760px){.intro{grid-template-columns:1fr}.hero-photo{width:85%}.hero-photo img{max-height:240px}.menu-grid{grid-template-columns:1fr}.menu-card,.menu-card:nth-child(4),.menu-card:nth-child(5){grid-column:auto}section{padding:38px 18px}}
 
-</style></head><body><div class="wrap">
+
+/* Preorder cart */
+.preorder{background:linear-gradient(120deg,#fff7f9,#f8dce6)}
+.preorder-intro{text-align:center;max-width:760px;margin:0 auto 24px;line-height:1.65}
+.product-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;max-width:980px;margin:24px auto}
+.product-option{background:#fffaf7;border:1px solid #e7a5ba;border-radius:18px;padding:18px;text-align:left;box-shadow:0 8px 20px #54201610}
+.product-option h3{font:1.3rem 'Brush Script MT','Segoe Script',cursive;margin:0 0 8px}
+.product-option p{margin:6px 0 12px}.product-option button,.cart-button{cursor:pointer;border:1px solid #b96f82;border-radius:999px;padding:10px 16px;background:#35160f;color:#ffeaf0;font-weight:bold}
+.product-option button:disabled{opacity:.45;cursor:not-allowed}.sold-out{color:#a12f50;font:bold .85rem Arial,sans-serif}
+.cart-panel,.checkout-panel{max-width:760px;margin:22px auto;background:#fffaf7;border:2px solid #e7a5ba;border-radius:22px;padding:22px;box-shadow:0 10px 24px #54201612}
+.cart-line{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px dotted #c78b9c}
+.checkout-panel label{display:block;font-weight:bold;margin:14px 0 6px;color:#713a43}
+.checkout-panel input,.checkout-panel textarea{width:100%;padding:12px;border:1px solid #d99aad;border-radius:10px;background:#fff}
+.checkout-panel textarea{min-height:85px}.checkout-note{background:#f9e2ea;border-radius:14px;padding:14px;line-height:1.6;margin:18px 0}
+#preorder-status{min-height:24px;text-align:center;line-height:1.5;margin:14px}
+@media(max-width:700px){.cart-panel,.checkout-panel{padding:17px}}
+\n</style></head><body><div class="wrap">
 <div class="topline">♡ &nbsp; SWEET TREATS. BIG LOVE. &nbsp; ♡</div><header><div class="kicker">♡ Small-batch homemade treats ♡</div><h1>Baked By Netta</h1><p class="tag">Homemade with love, one sweet bite at a time</p></header>
-<nav><a href="#menu">Menu</a><a href="#order">How to Order</a><a href="#payment">Payments</a><a href="#reviews">Reviews</a><a href="#follow">Follow Along</a></nav>
+<nav><a href="#menu">Menu</a><a href="#preorder">Preorders</a><a href="#order">How to Order</a><a href="#payment">Payments</a><a href="#reviews">Reviews</a><a href="#follow">Follow Along</a></nav>
 <section class="intro"><div><h2>Homemade Treats,<br>Made with Love ♡</h2><p>From cookies to cinnamon rolls, every bite is a sweet reminder that you’re special.</p><a class="btn" href="#order">Order Now ♡</a></div><div class="hero-photo"><img src="/images/netta-cookie.jpg" alt="Baked By Netta chocolate chip cookies"></div></section>
 <section id="menu"><h2 class="section-title">♡ Menu ♡</h2><div class="menu-grid">
 <article class="menu-card"><h3>Cookies</h3>
@@ -103,7 +119,25 @@ footer{background:#35160f;color:#ffeaf0;border-top:5px solid #efa9c1;padding:34p
 <div class="subhead">Biscoff Cinnamon Rolls</div><div class="price-row"><span>1 roll</span><strong>$6</strong></div><div class="price-row"><span>2 rolls</span><strong>$12</strong></div><div class="price-row"><span>4 rolls</span><strong>$19</strong></div>
 <div class="note">Same sweet rolls, just a little more Biscoff magic!</div></article></div>
 <div class="coming"><strong>More Menu Items</strong><span>♡ COMING SOON ♡</span></div></section>
-<section class="order" id="order"><h2 class="section-title">♡ Ready to Order? ♡</h2><p>Text to order.</p>
+
+<section class="preorder" id="preorder">
+<h2 class="section-title">♡ Preorder Your Treats ♡</h2>
+<p class="preorder-intro">Choose your packages, add them to your cart, and send your preorder request. Availability is updated as orders are placed.</p>
+<div class="product-list" id="product-list"><p>Loading current availability…</p></div>
+<div class="cart-panel"><h3 class="section-title" style="font-size:2.2rem">♡ Your Cart ♡</h3><div id="cart-items">Your cart is empty.</div><p style="text-align:right;font-size:1.2rem"><strong>Total: <span id="cart-total">$0.00</span></strong></p></div>
+<form class="checkout-panel" id="preorder-form">
+<h3 class="section-title" style="font-size:2.2rem">♡ Your Details ♡</h3>
+<label for="customer-name">Your name</label><input id="customer-name" name="name" maxlength="80" autocomplete="name" required>
+<label for="customer-phone">Phone number</label><input id="customer-phone" name="phone" type="tel" maxlength="30" autocomplete="tel" required>
+<label for="pickup-date">Preferred pickup date (at least 2 days in advance)</label><input id="pickup-date" name="pickupDate" type="date" required>
+<label for="order-notes">Order notes (optional)</label><textarea id="order-notes" name="notes" maxlength="1000" placeholder="Flavors or other details…"></textarea>
+<div class="checkout-note"><strong>Order Confirmation:</strong> I will contact you within 24 hours regarding your order. Your order and preferred pickup date are not confirmed until I contact you. Please wait for me to confirm availability and pickup details before considering your order finalized.</div>
+<div style="text-align:center"><button class="cart-button" id="place-order" type="submit">♡ Submit Preorder ♡</button></div>
+<p id="preorder-status" role="status" aria-live="polite"></p>
+</form>
+<p class="small" style="text-align:center">Submitting a preorder request does not collect payment. Payment arrangements will be made after I contact you.</p>
+</section>
+\n<section class="order" id="order"><h2 class="section-title">♡ Ready to Order? ♡</h2><p>Text to order.</p>
 <div class="order-cards"><div class="order-card"><h3>Text to Order</h3><p>Send a text with the treats and quantities you'd like.</p><a class="btn" href="sms:+15087945595">Text 508-794-5595</a></div>
 </div></section>
 <section class="pay" id="payment"><h2 class="section-title">♡ Payments ♡</h2><p>PayPal and Venmo are for <strong>payments only</strong>. Please place your order by text first.</p><a class="btn" href="https://www.paypal.me/Robynettaa" target="_blank" rel="noopener">Pay with PayPal</a> <a class="btn" href="https://www.venmo.com/u/BakedByNetta_" target="_blank" rel="noopener">Pay with Venmo</a></section>
@@ -242,4 +276,72 @@ footer{background:#35160f;color:#ffeaf0;border-top:5px solid #efa9c1;padding:34p
 })();
 </script>
 
-</body></html>
+
+<script>
+(() => {
+ const products=[
+  ["cookie4","Cookies — 4 pack",6],["cookie6","Cookies — 6 pack",9],["cookie12","Cookies — 12 pack",16],
+  ["classic1","Classic Cinnamon Rolls — 1",5],["classic2","Classic Cinnamon Rolls — 2",9],["classic4","Classic Cinnamon Rolls — 4",18],
+  ["biscoff1","Biscoff Cinnamon Rolls — 1",6],["biscoff2","Biscoff Cinnamon Rolls — 2",12],["biscoff4","Biscoff Cinnamon Rolls — 4",19]
+ ];
+ const cart={}; let inventory={};
+ const productList=document.getElementById("product-list");
+ const cartItems=document.getElementById("cart-items");
+ const totalEl=document.getElementById("cart-total");
+ const status=document.getElementById("preorder-status");
+ const form=document.getElementById("preorder-form");
+ const submit=document.getElementById("place-order");
+ const money=n=>"$"+Number(n).toFixed(2);
+ function minimumDate(){
+   const d=new Date(); d.setHours(0,0,0,0); d.setDate(d.getDate()+2);
+   const local=new Date(d.getTime()-d.getTimezoneOffset()*60000);
+   return local.toISOString().slice(0,10);
+ }
+ document.getElementById("pickup-date").min=minimumDate();
+ function renderProducts(){
+  productList.replaceChildren();
+  products.forEach(([id,name,price])=>{
+   const stock=Number(inventory[id]?.stock||0);
+   const card=document.createElement("article"); card.className="product-option";
+   const h=document.createElement("h3");h.textContent=name;card.append(h);
+   const p=document.createElement("p");p.textContent=money(price);card.append(p);
+   const available=document.createElement("p");available.textContent=stock>0?stock+" available":"SOLD OUT";available.className=stock>0?"small":"sold-out";card.append(available);
+   const button=document.createElement("button");button.type="button";button.textContent="Add to Cart";button.disabled=stock<1;
+   button.addEventListener("click",()=>{if((cart[id]||0)>=stock){status.textContent="That is the available quantity for this package.";return;}cart[id]=(cart[id]||0)+1;renderCart();});card.append(button);productList.append(card);
+  });
+ }
+ function renderCart(){
+  cartItems.replaceChildren();let total=0;let count=0;
+  products.forEach(([id,name,price])=>{
+   const qty=cart[id]||0;if(!qty)return;count+=qty;total+=qty*price;
+   const line=document.createElement("div");line.className="cart-line";
+   const label=document.createElement("span");label.textContent=name+" × "+qty;
+   const right=document.createElement("span");right.textContent=money(qty*price)+" ";
+   const remove=document.createElement("button");remove.type="button";remove.textContent="−";remove.setAttribute("aria-label","Remove one "+name);remove.addEventListener("click",()=>{cart[id]--;if(cart[id]<=0)delete cart[id];renderCart();});
+   right.append(remove);line.append(label,right);cartItems.append(line);
+  });
+  if(!count)cartItems.textContent="Your cart is empty.";
+  totalEl.textContent=money(total);renderProducts();
+ }
+ async function loadInventory(){
+  try{const r=await fetch("/.netlify/functions/get-inventory");const data=await r.json();if(!r.ok)throw new Error();inventory=data.inventory||{};renderProducts();}
+  catch{productList.textContent="Availability is temporarily unavailable. Please try again shortly.";}
+ }
+ form.addEventListener("submit",async e=>{
+  e.preventDefault();status.textContent="";
+  const items=products.filter(([id])=>cart[id]).map(([id])=>({id,quantity:cart[id]}));
+  if(!items.length){status.textContent="Please add at least one item to your cart.";return;}
+  const pickupDate=document.getElementById("pickup-date").value;
+  if(!pickupDate||pickupDate<minimumDate()){status.textContent="Please choose a pickup date at least 2 days in advance.";return;}
+  submit.disabled=true;submit.textContent="Sending preorder…";
+  try{
+   const r=await fetch("/.netlify/functions/submit-order",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:form.name.value,phone:form.phone.value,notes:form.notes.value,pickupDate,items})});
+   const data=await r.json();if(!r.ok)throw new Error(data.error||"Your preorder could not be submitted.");
+   form.reset();Object.keys(cart).forEach(k=>delete cart[k]);document.getElementById("pickup-date").min=minimumDate();status.textContent=data.message+" Your request number is "+data.orderId.slice(0,8)+".";renderCart();await loadInventory();
+  }catch(err){status.textContent=err.message||"Something went wrong. Please try again.";}
+  finally{submit.disabled=false;submit.textContent="♡ Submit Preorder ♡";}
+ });
+ loadInventory();renderCart();
+})();
+</script>
+\n</body></html>
