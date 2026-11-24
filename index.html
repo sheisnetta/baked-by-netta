@@ -335,7 +335,7 @@ footer{background:#35160f;color:#ffeaf0;border-top:5px solid #efa9c1;padding:34p
   if(!pickupDate||pickupDate<minimumDate()){status.textContent="Please choose a pickup date at least 2 days in advance.";return;}
   submit.disabled=true;submit.textContent="Sending preorder…";
   try{
-   const r=await fetch("/.netlify/functions/submit-order",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:form.name.value,phone:form.phone.value,notes:form.notes.value,pickupDate,items})});
+   const r=await fetch("/.netlify/functions/submit-order",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:form.elements.namedItem("name").value,phone:form.elements.namedItem("phone").value,notes:form.elements.namedItem("notes").value,pickupDate,items})});
    const data=await r.json();if(!r.ok)throw new Error(data.error||"Your preorder could not be submitted.");
    form.reset();Object.keys(cart).forEach(k=>delete cart[k]);document.getElementById("pickup-date").min=minimumDate();status.textContent=data.message+" Your request number is "+data.orderId.slice(0,8)+".";renderCart();await loadInventory();
   }catch(err){status.textContent=err.message||"Something went wrong. Please try again.";}
