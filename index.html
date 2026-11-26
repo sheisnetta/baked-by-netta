@@ -82,7 +82,7 @@ body{background:#f9e8ed;color:#704d59;font-family:Georgia,'Times New Roman',seri
 header{padding:18px 20px 14px;background:#fff1f5;border:0}
 header .kicker{font-size:.58rem;letter-spacing:.18em}
 header h1{font-size:clamp(2.5rem,7vw,4.1rem);margin:5px 0;color:#b66f86;text-shadow:1px 1px #fff}
-header h1:before{content:"♡";font:1.2rem Georgia;color:#c9a86a;vertical-align:top;margin-right:8px}
+header h1:before{content:none}
 header .tag{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;margin:0;color:#9a6c7c}
 nav{justify-content:center;gap:clamp(8px,2vw,25px);padding:10px 12px;background:#fff8fa;border:0;border-top:1px solid #e8c6d0;border-bottom:1px solid #e8c6d0}
 nav a{border:0;border-radius:0;background:transparent;padding:7px 10px;font:.72rem Georgia,serif;color:#88596b}
@@ -139,17 +139,19 @@ footer{background:linear-gradient(110deg,#f8dce5,#fff0f4,#f4d4df);border-top:1px
 }
 </style></head><body><div class="wrap">
 <div class="topline">♡ &nbsp; SWEET TREATS. BIG LOVE. &nbsp; ♡</div>
-<header><div class="kicker">Small-batch homemade treats</div><h1>Baked By Netta</h1><p class="tag">Homemade with love, one sweet bite at a time</p></header>
-<nav><a href="#home">Home</a><a href="#menu">Menu</a><a href="#preorder">Preorder / Cart</a><a href="#reviews">Reviews</a></nav>
-<section class="intro" id="home"><div class="hero-art" aria-hidden="true">♡</div><div class="hero-copy"><h2>Welcome to<br>Baked By Netta ♡</h2><p>Homemade treats made with love, one sweet bite at a time.</p><a class="btn primary" href="#menu">Shop the Menu ♡</a></div></section>
+<header><div class="kicker">Small-batch homemade treats</div><h1>Baked By Netta</h1><p class="tag">A little sweetness in every bite</p></header>
+<nav><a href="#home">Home</a><a href="#menu">Menu</a><a href="#preorder">Preorder / Cart</a><a href="#payment">Payments</a><a href="#reviews">Reviews</a></nav>
+<section class="intro" id="home"><div class="hero-art" aria-hidden="true">♡</div><div class="hero-copy"><h2>A Little<br>Something Sweet</h2><p>Small-batch favorites for your sweetest moments.</p><a class="btn primary" href="#menu">Shop the Menu</a></div></section>
 <section class="menu" id="menu"><h2 class="section-title">♡ Menu ♡</h2><div class="menu-accordions">
 <details><summary>Cookies</summary><div class="menu-detail">
-<div class="price-row"><span>Chocolate Chip, Sugar Cookie &amp; Churro</span><strong>4/$6 · 6/$9 · 12/$16</strong></div>
-<div class="price-row"><span>Coffee Cake Cookie</span><strong>4/$7 · 6/$10 · 12/$17</strong></div>
+<div class="price-row"><span>Chocolate Chip</span></div>
+<div class="price-row"><span>Sugar Cookie</span></div>
+<div class="price-row"><span>Churro Cookie</span></div>
+<div class="price-row"><span>Coffee Cake Cookie</span></div>
 </div></details>
 <details><summary>Cinnamon Rolls</summary><div class="menu-detail">
-<div class="price-row"><span>Classic</span><strong>2/$9 · 4/$18</strong></div>
-<div class="price-row"><span>Biscoff</span><strong>2/$12 · 4/$19</strong></div>
+<div class="price-row"><span>Classic Cinnamon Rolls</span></div>
+<div class="price-row"><span>Biscoff Cinnamon Rolls</span></div>
 </div></details>
 </div><div class="coming"><strong>More menu items coming soon ♡</strong></div></section>
 <section class="preorder" id="preorder"><h2 class="section-title">♡ Preorder Your Treats ♡</h2>
@@ -178,6 +180,7 @@ footer{background:linear-gradient(110deg,#f8dce5,#fff0f4,#f4d4df);border-top:1px
 </form>
 <p class="small" style="text-align:center">Payment instructions for Venmo or PayPal will be sent after I contact you and confirm your order.</p>
 </section>
+<section class="pay" id="payment"><h2 class="section-title">♡ Payment Options ♡</h2><p>Once I contact you and confirm your order, you can complete payment using either option below.</p><a class="btn" href="https://www.paypal.me/Robynettaa" target="_blank" rel="noopener">Pay with PayPal</a> <a class="btn" href="https://www.venmo.com/u/BakedByNetta_" target="_blank" rel="noopener">Pay with Venmo</a></section>
 <section class="reviews" id="reviews"><h2 class="section-title">Customer Reviews ♡</h2>
 <p class="reviews-intro">Have you tried something from Baked By Netta? I’d love to hear what you think!</p>
 <div class="review-status" id="review-status" role="status" aria-live="polite">Loading customer reviews…</div><div class="review-grid" id="review-grid" aria-live="polite"></div>
