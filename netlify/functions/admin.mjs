@@ -21,7 +21,7 @@ const defaults = {
 function authorized(request) { const secret=process.env.ADMIN_PASSWORD; return Boolean(secret && request.headers.get("authorization")==="Bearer "+secret); }
 export default async request => {
  if(!authorized(request)) return reply({error:"Unauthorized. Check the owner password."},401);
- const store=getStore("baked-by-netta-store");
+ const store=getStore({name:"baked-by-netta-store",consistency:"strong"});
  if(request.method==="GET"){
   const {blobs=[]}=await store.list({prefix:"order-"}),orders=[];
   for(const blob of blobs){const item=await store.get(blob.key,{type:"json"});if(item)orders.push(item);}
@@ -41,6 +41,14 @@ export default async request => {
    const id=String(data.id||""),status=String(data.status||"");
    if(!["New","Contacted","Confirmed","Completed","Cancelled"].includes(status))return reply({error:"Invalid order status."},400);
    const key="order-"+id+".json",order=await store.get(key,{type:"json"});if(!order)return reply({error:"Order not found."},404);
+   // Deduct each order once, including previously confirmed orders without a deduction marker.
+   if(status==="Confirmed" && !order.stockDeducted){
+    const current=await store.get("inventory",{type:"json"})||{},needed={};
+    for(const item of order.items||[]){const qty=Number(item.quantity);if(!defaults[item.id]||!Number.isInteger(qty)||qty<1)return reply({error:"Invalid order item."},400);needed[item.id]=(needed[item.id]||0)+qty;}
+    for(const [id,qty] of Object.entries(needed)){if(Number(current[id]?.stock||0)<qty)return reply({error:defaults[id].name+" has insufficient stock."},409);}
+    for(const [id,qty] of Object.entries(needed)){current[id]={...defaults[id],stock:Number(current[id].stock)-qty};}
+    await store.setJSON("inventory",current);order.stockDeducted=true;
+   }
    order.status=status;await store.setJSON(key,order);return reply({ok:true,order});
   }
   return reply({error:"Unknown action."},400);
