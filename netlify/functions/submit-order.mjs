@@ -52,7 +52,7 @@ export default async request => {
     cleanItems.push({ id:key, name:product.name, quantity:qty, unitPrice:product.price, lineTotal:product.price*qty });
     subtotal += product.price*qty;
   }
-  const normalizedCity = deliveryCity.toLowerCase().replace(/\s+/g, " ");
+  const normalizedCity = deliveryCity.toLowerCase().replace(/\s+/g, " ").replace(/,\s*(ma|massachusetts)$/, "").trim();
   const deliveryFee = fulfillment === "pickup" ? 0 : (normalizedCity === "methuen" || normalizedCity === "lawrence" ? 4 : null);
   const total = deliveryFee === null ? null : subtotal + deliveryFee;
   const order = { id:randomUUID(), name, phone, notes, pickupDate, fulfillment, deliveryCity:fulfillment === "delivery" ? deliveryCity : "", deliveryAddress:fulfillment === "delivery" ? deliveryAddress : "", items:cleanItems, subtotal, deliveryFee, total, status:"New", createdAt:new Date().toISOString() };
