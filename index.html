@@ -1,181 +1,137 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f5b4ca"><meta name="description" content="Baked By Netta — homemade cookies and cinnamon rolls, baked with love.">
+<meta name="theme-color" content="#f7dce5"><meta name="description" content="Baked By Netta — homemade cookies and cinnamon rolls, baked with love.">
 <title>Baked By Netta | Homemade with Love</title>
 <style>
-:root{--pink:#f3a9c1;--pale:#ffe0e9;--brown:#542016;--cream:#fff8ed;--berry:#b94365}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;color:var(--brown);background-color:var(--cream);background-image:linear-gradient(45deg,#783a2c 25%,transparent 25%),linear-gradient(-45deg,#783a2c 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#783a2c 75%),linear-gradient(-45deg,transparent 75%,#783a2c 75%);background-size:34px 34px;background-position:0 0,0 17px,17px -17px,-17px 0;font-family:Georgia,serif}
-.wrap{max-width:1080px;margin:24px auto;background:var(--cream);border:5px solid var(--pink);outline:2px dashed #a84d4b;outline-offset:-13px;box-shadow:0 12px 35px #48201630;overflow:hidden}
-header{text-align:center;padding:58px 20px 38px;background:radial-gradient(ellipse at center,#fffdf7 0 55%,#ffe9ef 100%);border-bottom:5px solid var(--pink)}
-.kicker{font:700 .8rem Arial,sans-serif;letter-spacing:.25em;text-transform:uppercase;color:var(--berry)}
-h1{font-size:clamp(3rem,8vw,6.3rem);line-height:.95;margin:14px 0;color:var(--brown);font-style:italic;letter-spacing:-.06em}
-.tag{font-size:clamp(1.1rem,3vw,1.6rem);font-style:italic;margin:15px 0 0}
-nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;padding:17px;background:var(--pale);border-bottom:2px dashed var(--berry)}
-nav a,.btn{display:inline-block;text-decoration:none;color:var(--brown);font:bold .92rem Arial,sans-serif;padding:12px 18px;border:2px solid var(--berry);border-radius:999px;background:#fff9f5}
-nav a:hover,.btn:hover{background:var(--pale)}
-section{padding:42px 28px}.intro{text-align:center;background:#fffaf3}
-.intro h2,.section-title{font-size:clamp(2rem,5vw,3.3rem);font-style:italic;margin:0 0 12px;text-align:center}
-.intro p{font-size:1.15rem;line-height:1.7;max-width:700px;margin:0 auto 22px}
-.menu-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:900px;margin:26px auto 0}
-.menu-card{border:3px solid var(--pink);border-radius:24px;padding:25px;background:#fffaf3;box-shadow:5px 6px 0 #f9d7e2}
-.menu-card h3{text-align:center;font-size:2rem;font-style:italic;margin:0 0 20px;background:var(--pale);border-radius:50px;padding:8px}
-.subhead{font-weight:bold;font-style:italic;font-size:1.2rem;margin:16px 0 8px;color:#8d3b48}
-.price-row{display:flex;justify-content:space-between;gap:15px;border-bottom:1px dotted #a76b5c;padding:9px 2px;font-size:1.12rem}
-.flavors{text-align:center;line-height:1.9;margin-top:18px}.note{text-align:center;font-style:italic;color:#8d3b48;margin-top:16px}
-.coming{margin:30px auto 0;max-width:800px;text-align:center;padding:28px;border:3px dashed var(--berry);border-radius:50px;background:var(--pale)}
-.coming strong{display:block;font-size:clamp(1.8rem,5vw,3rem);font-style:italic}
-.order{background:#fff3f6;text-align:center}.order-cards{display:grid;grid-template-columns:minmax(0,420px);justify-content:center;gap:16px;max-width:900px;margin:25px auto}
-.order-card{background:#fffaf3;border:2px solid var(--pink);border-radius:20px;padding:22px 15px}.order-card h3{font-size:1.35rem;margin:5px 0 10px}
-.order-card p{line-height:1.5;min-height:48px}.order-card .btn{margin-top:8px;background:var(--pale)}
-.pay{text-align:center;background:#fffaf3}.pay p{font-size:1.1rem;line-height:1.6}
-.tiktok{text-align:center;background:var(--pale)}footer{text-align:center;padding:28px 18px;background:#f6c2d3;border-top:4px solid var(--berry);font-style:italic;font-size:1.05rem}
-.small{font: .85rem Arial,sans-serif;opacity:.8}
-@media(max-width:700px){.wrap{margin:0;border-width:3px;outline-offset:-10px}.menu-grid,.order-cards{grid-template-columns:1fr}section{padding:32px 18px}.menu-card{padding:20px}.order-card p{min-height:0}}
-
-/* Reviews section — styled to match Baked By Netta */
-.reviews{background:#fffaf3;text-align:center}
-.reviews-intro{max-width:720px;margin:0 auto 24px;line-height:1.6;font-size:1.08rem}
-.review-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;max-width:850px;margin:25px auto}
-.review-card{background:#fff3f6;border:2px solid var(--pink);border-radius:22px;padding:22px;text-align:left;box-shadow:4px 5px 0 #f9d7e2}
-.review-stars{color:#b94365;letter-spacing:.12em;font:1.25rem Arial,sans-serif}
-.review-card p{line-height:1.6;margin:10px 0}
-.review-status{max-width:720px;margin:16px auto;color:#8d3b48;font: .95rem Arial,sans-serif}.spam-trap{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}.review-photo{display:block;max-width:100%;max-height:260px;object-fit:cover;border-radius:14px;border:2px solid var(--pink);margin:12px auto 0}
-.review-form{max-width:720px;margin:28px auto 0;padding:26px;background:#fff3f6;border:3px solid var(--pink);border-radius:24px;text-align:left;box-shadow:5px 6px 0 #f9d7e2}
-.review-form h3{text-align:center;font-size:1.8rem;font-style:italic;margin:0 0 8px}
-.review-form .form-note{text-align:center;line-height:1.5;margin:0 0 20px}
-.review-form label{display:block;font-weight:bold;margin:15px 0 7px;color:#8d3b48}
-.review-form input[type=text],.review-form textarea,.review-form input[type=file]{width:100%;font:1rem Georgia,serif;color:var(--brown);background:#fffaf3;border:2px solid var(--pink);border-radius:12px;padding:12px}
-.review-form textarea{min-height:120px;resize:vertical}
-.review-form .rating-options{display:flex;gap:16px;flex-wrap:wrap;background:#fffaf3;border:2px solid var(--pink);border-radius:12px;padding:12px}
-.review-form .rating-options label{display:flex;align-items:center;gap:5px;margin:0;font-weight:normal}
-.review-form button{cursor:pointer;font-family:Arial,sans-serif}
-.review-form .submit-row{text-align:center;margin-top:20px}
-.review-form .privacy-note{font:.82rem Arial,sans-serif;text-align:center;line-height:1.5;opacity:.8;margin:14px 0 0}
-@media(max-width:700px){.review-grid{grid-template-columns:1fr}.review-form{padding:20px}}
-
-/* Pink satin + chocolate brown redesign */
-:root{--pink:#efa9c1;--pale:#f9dce6;--brown:#4a2119;--cream:#fffaf7;--berry:#a95770}
-body{background:radial-gradient(ellipse at 15% 15%,#fff8fa 0,transparent 38%),radial-gradient(ellipse at 85% 80%,#f3bfd0 0,transparent 42%),linear-gradient(135deg,#f8dce5,#f4c2d2 55%,#fff0f4);background-attachment:fixed}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;background:repeating-linear-gradient(115deg,transparent 0 20px,#fff 21px 22px,transparent 24px 48px)}
-.wrap{max-width:1180px;margin:0 auto;background:#fffaf7e8;border:0;outline:0;box-shadow:0 0 55px #54201622}
-.topline{background:#35160f;color:#ffe7ef;text-align:center;padding:12px;font:italic 1rem Georgia,serif;letter-spacing:.14em;border-bottom:3px solid var(--pink)}
-header{padding:48px 20px 34px;background:linear-gradient(135deg,#fff4f7,#f7d9e4);border:0}
-h1{font-family:'Brush Script MT','Segoe Script',cursive;font-size:clamp(3.6rem,9vw,7rem);font-weight:500;letter-spacing:-.035em;text-shadow:2px 3px #fff}
-.tag{font-size:clamp(1.2rem,3vw,1.7rem);color:#7a3a43}
-nav{background:#35160f;border-top:1px solid #9d5b54;border-bottom:4px solid var(--pink);gap:8px}
-nav a{color:#ffeaf0;border:0;background:transparent;box-shadow:none}
-nav a:hover{background:#ffffff20}
-section{padding:48px 28px}
-.intro{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:24px;text-align:center;background:linear-gradient(120deg,#fff7f8,#f7d6e2);min-height:320px}
-.intro h2,.section-title{font-family:'Brush Script MT','Segoe Script',cursive;font-weight:500;color:#4a2119}
-.intro h2{font-size:clamp(2.5rem,5vw,4rem)}.intro p{font-size:1.13rem;line-height:1.8}
-.hero-photo{width:min(100%,430px);margin:auto;padding:10px;border:8px solid #fff;border-radius:28px;outline:2px solid #e8a8bd;background:linear-gradient(145deg,#f9dce6,#f1b9cc);box-shadow:0 12px 28px #54201620;transform:none}.hero-photo img{display:block;width:100%;height:auto;max-height:300px;object-fit:cover;border-radius:15px}
-.btn{background:linear-gradient(145deg,#fff8fa,#f4c8d7);border-color:#b96f82;color:#4a2119;box-shadow:0 3px 0 #b96f8240}
-.menu-grid{grid-template-columns:repeat(6,minmax(0,1fr));max-width:1000px;gap:20px}
-.menu-card{grid-column:span 2;border:1px solid #e7a5ba;border-radius:28px;background:linear-gradient(145deg,#fce7ee,#f7cfdd);box-shadow:0 14px 35px #54201618;text-align:center}
-.menu-card:nth-child(4),.menu-card:nth-child(5){grid-column:span 3}
-.menu-card:before{content:"♡";display:block;color:#b65e7a;font-size:1.4rem;margin:-8px 0 6px}
-.menu-card h3{font-family:'Brush Script MT','Segoe Script',cursive;font-weight:500;color:#59291f}
-.section-title{font-size:clamp(2.5rem,5vw,4rem)}
-.coming{border:1px solid #c67b91;border-radius:50px;background:linear-gradient(120deg,#f9d8e3,#fff0f4);box-shadow:0 12px 30px #54201614}
-.coming strong{font-family:'Brush Script MT','Segoe Script',cursive;font-weight:500}
-.order{background:linear-gradient(120deg,#f9e0e8,#fff7f9)}
-.order-card,.review-card,.review-form{border:1px solid #e7a5ba;box-shadow:0 12px 30px #54201614}
-.order-card{background:#fff9fa;border-radius:24px}
-.order-card h3,.review-form h3{font-family:'Brush Script MT','Segoe Script',cursive;font-weight:500}
-.order-card .btn{background:#35160f;color:#ffeaf0}
-.pay,.reviews{background:#fffaf7}.tiktok{background:linear-gradient(120deg,#f4c8d7,#fce8ee)}
-footer{background:#35160f;color:#ffeaf0;border-top:5px solid #efa9c1;padding:34px 18px}
-@media(max-width:760px){.intro{grid-template-columns:1fr}.hero-photo{width:85%}.hero-photo img{max-height:240px}.menu-grid{grid-template-columns:1fr}.menu-card,.menu-card:nth-child(4),.menu-card:nth-child(5){grid-column:auto}section{padding:38px 18px}}
-
-
-/* Preorder cart */
-.preorder{background:linear-gradient(120deg,#fff7f9,#f8dce6)}
-.preorder-intro{text-align:center;max-width:760px;margin:0 auto 24px;line-height:1.65}
-.product-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;max-width:980px;margin:24px auto}
-.product-option{background:#fffaf7;border:1px solid #e7a5ba;border-radius:18px;padding:18px;text-align:left;box-shadow:0 8px 20px #54201610}
-.product-option h3{font:1.3rem 'Brush Script MT','Segoe Script',cursive;margin:0 0 8px}
-.product-option p{margin:6px 0 12px}.product-option button,.cart-button{cursor:pointer;border:1px solid #b96f82;border-radius:999px;padding:10px 16px;background:#35160f;color:#ffeaf0;font-weight:bold}
-.product-option button:disabled{opacity:.45;cursor:not-allowed}.sold-out{color:#a12f50;font:bold .85rem Arial,sans-serif}
-.cart-panel,.checkout-panel{max-width:760px;margin:22px auto;background:#fffaf7;border:2px solid #e7a5ba;border-radius:22px;padding:22px;box-shadow:0 10px 24px #54201612}
-.cart-line{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px dotted #c78b9c}
-.checkout-panel label{display:block;font-weight:bold;margin:14px 0 6px;color:#713a43}
-.checkout-panel input,.checkout-panel textarea{width:100%;padding:12px;border:1px solid #d99aad;border-radius:10px;background:#fff}
-.checkout-panel textarea{min-height:85px}.checkout-note{background:#f9e2ea;border-radius:14px;padding:14px;line-height:1.6;margin:18px 0}
+:root{--blush:#f7dce5;--pink:#e9a9bd;--rose:#b96f86;--champagne:#c9a86a;--ink:#654b50;--paper:#fffaf9;--pale:#fff0f4}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:linear-gradient(135deg,#fff8fa,#f5dce5 55%,#fffaf8);color:var(--ink);font-family:Georgia,serif}
+.wrap{max-width:1180px;margin:0 auto;background:var(--paper);box-shadow:0 12px 50px #8b56631c;overflow:hidden}
+.topline{background:#f4e8d5;color:#8c6f4a;text-align:center;padding:10px;font: .75rem Arial,sans-serif;letter-spacing:.2em}
+header{text-align:center;padding:38px 20px 28px;background:linear-gradient(135deg,#fff9fa,#f8e3e9);border-bottom:1px solid var(--champagne)}
+.kicker{font: .72rem Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#9c7180}
+h1{font:500 clamp(3.2rem,8vw,6rem)/1 'Brush Script MT','Segoe Script',cursive;color:#9a6274;margin:12px 0;text-shadow:1px 2px #fff}
+.tag{margin:8px 0 0;font-style:italic;color:#8b7077;font-size:1.1rem}
+nav{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;padding:13px;background:#fffaf9;border-bottom:1px solid var(--champagne)}
+nav a,.btn{display:inline-block;text-decoration:none;color:#87596a;border:1px solid var(--champagne);background:#fff8f8;border-radius:999px;padding:11px 18px;font:bold .82rem Arial,sans-serif}
+nav a:hover,.btn:hover{background:#f8e6eb}
+section{padding:44px 28px;border-bottom:1px solid #e7d4b8}
+.intro{text-align:center;background:linear-gradient(120deg,#fff7f9,#f8e5eb);padding:64px 24px}
+.intro h2,.section-title{font:500 clamp(2.4rem,5vw,3.8rem) 'Brush Script MT','Segoe Script',cursive;color:#9a6274;text-align:center;margin:0 0 14px}
+.intro p{max-width:650px;margin:0 auto 24px;line-height:1.8;font-size:1.08rem}
+.btn.primary,.cart-button,.product-option button{background:#bd8295;color:white;border:1px solid var(--champagne);box-shadow:0 3px 0 #c9a86a35}
+.menu{background:#fffdfc}
+.menu-accordions{max-width:850px;margin:24px auto}
+.menu-accordions details,.product-category{border:1px solid var(--champagne);border-radius:18px;background:#fff8f8;margin:12px 0;overflow:hidden}
+summary{cursor:pointer;list-style:none;padding:17px 20px;color:#956477;font-size:1.35rem;font-style:italic;text-align:center}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"＋";float:right;font:1rem Arial,sans-serif;color:var(--champagne)}
+details[open]>summary:after{content:"−"}
+.menu-detail{padding:0 22px 20px}
+.price-row{display:flex;justify-content:space-between;gap:16px;padding:10px 2px;border-bottom:1px solid #eadfcf}
+.menu-note{text-align:center;font-style:italic;color:#9a7b82;margin:16px 0 0}
+.coming{max-width:780px;margin:24px auto 0;text-align:center;border:1px solid var(--champagne);border-radius:16px;padding:20px;background:#fff8f8;color:#94677a}
+.preorder{background:linear-gradient(120deg,#fff8fa,#f9e8ed)}
+.preorder-intro{text-align:center;max-width:720px;margin:0 auto 24px;line-height:1.7}
+.product-category{max-width:980px;margin:16px auto}
+.product-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding:4px 18px 20px}
+.product-option{background:#fffdfc;border:1px solid #ead8bd;border-radius:14px;padding:18px;text-align:left}
+.product-option h3{font-size:1.12rem;color:#946477;margin:0 0 8px}
+.product-option p{margin:6px 0 12px}
+.product-option select,.checkout-panel input,.checkout-panel textarea,.checkout-panel select{width:100%;padding:12px;border:1px solid #d8bdc3;border-radius:10px;background:white;color:var(--ink);font:1rem Georgia,serif}
+.product-option button,.cart-button{cursor:pointer;border-radius:999px;padding:10px 16px;font-weight:bold;margin-top:10px}
+.product-option button:disabled{opacity:.45;cursor:not-allowed}
+.sold-out{color:#a34f66;font:bold .8rem Arial,sans-serif}
+.cart-panel,.checkout-panel{max-width:780px;margin:22px auto;background:#fffdfc;border:1px solid var(--champagne);border-radius:18px;padding:22px}
+.cart-line{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #eadfcf}
+.cart-line button{border:1px solid var(--rose);border-radius:50%;background:#fff0f4;color:#87596a;cursor:pointer}
+.cart-total{font-size:1.2rem;text-align:right;margin:18px 0 4px}
+.checkout-panel label{display:block;font-weight:bold;margin:14px 0 6px;color:#8e6673}
+.choice-row{display:flex;gap:18px;flex-wrap:wrap;padding:12px;background:#fff7f8;border:1px solid #ead8bd;border-radius:12px}
+.choice-row label{display:flex;align-items:center;gap:7px;margin:0;font-weight:normal}
+.choice-row input{width:auto}
+.checkout-note{background:#f8e9ed;border:1px solid var(--champagne);border-radius:12px;padding:14px;line-height:1.65;margin:18px 0}
+#delivery-fields[hidden]{display:none}
 #preorder-status{min-height:24px;text-align:center;line-height:1.5;margin:14px}
-@media(max-width:700px){.cart-panel,.checkout-panel{padding:17px}}
-
+.order,.pay,.reviews,.tiktok{text-align:center;background:#fffdfc}
+.order p,.pay p,.reviews-intro,.tiktok p{line-height:1.7}
+.review-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;max-width:850px;margin:24px auto}
+.review-card{background:#fff7f8;border:1px solid var(--champagne);border-radius:16px;padding:20px;text-align:left}
+.review-stars{color:#ad7890;letter-spacing:.12em;font:1.2rem Arial,sans-serif}
+.review-photo{display:block;max-width:100%;max-height:260px;object-fit:cover;border-radius:12px;margin:12px auto 0}
+.review-status{margin:16px auto;color:#8c6873;font:.9rem Arial,sans-serif}
+.review-form{max-width:720px;margin:26px auto 0;padding:24px;background:#fff7f8;border:1px solid var(--champagne);border-radius:18px;text-align:left}
+.review-form h3{text-align:center;font:500 2rem 'Brush Script MT','Segoe Script',cursive;color:#946477;margin:0 0 8px}
+.review-form label{display:block;font-weight:bold;margin:14px 0 6px;color:#8e6673}
+.review-form input[type=text],.review-form textarea,.review-form input[type=file]{width:100%;font:1rem Georgia,serif;background:white;border:1px solid #d8bdc3;border-radius:10px;padding:12px}
+.review-form textarea{min-height:110px}
+.rating-options{display:flex;gap:14px;flex-wrap:wrap;background:white;border:1px solid #d8bdc3;border-radius:10px;padding:12px}
+.rating-options label{display:flex;align-items:center;gap:5px;margin:0;font-weight:normal}
+.review-form .submit-row{text-align:center;margin-top:18px}
+.review-form button{cursor:pointer}
+.privacy-note{text-align:center;font:.8rem Arial,sans-serif;line-height:1.5}
+.spam-trap{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+footer{text-align:center;padding:30px 18px;background:#f5e8d8;border-top:1px solid var(--champagne);color:#8d6b68}
+.small{font:.82rem Arial,sans-serif;opacity:.8}
+@media(max-width:700px){section{padding:34px 17px}.product-list,.review-grid{grid-template-columns:1fr}.cart-panel,.checkout-panel{padding:16px}.intro{padding:48px 18px}}
 </style></head><body><div class="wrap">
-<div class="topline">♡ &nbsp; SWEET TREATS. BIG LOVE. &nbsp; ♡</div><header><div class="kicker">♡ Small-batch homemade treats ♡</div><h1>Baked By Netta</h1><p class="tag">Homemade with love, one sweet bite at a time</p></header>
-<nav><a href="#menu">Menu</a><a href="#preorder">Preorders</a><a href="#order">How to Order</a><a href="#payment">Payments</a><a href="#reviews">Reviews</a><a href="#follow">Follow Along</a></nav>
-<section class="intro"><div><h2>Homemade Treats,<br>Made with Love ♡</h2><p>From cookies to cinnamon rolls, every bite is a sweet reminder that you’re special.</p><a class="btn" href="#order">Order Now ♡</a></div><div class="hero-photo"><img src="/images/netta-cookie.jpg" alt="Baked By Netta chocolate chip cookies"></div></section>
-<section id="menu"><h2 class="section-title">♡ Menu ♡</h2><div class="menu-grid">
-<article class="menu-card"><h3>Cookies</h3>
-<div class="price-row"><span>4 cookies</span><strong>$6</strong></div><div class="price-row"><span>6 cookies</span><strong>$9</strong></div><div class="price-row"><span>12 cookies</span><strong>$16</strong></div>
-<div class="note">Big batches = more sweetness!</div><div class="flavors">♥ Chocolate Chip<br>♥ Sugar<br>♥ Churro</div></article>
-<article class="menu-card"><h3>Cinnamon Rolls</h3><div class="subhead">Classic Cinnamon Rolls</div>
-<div class="price-row"><span>1 roll</span><strong>$5</strong></div><div class="price-row"><span>2 rolls</span><strong>$9</strong></div><div class="price-row"><span>4 rolls</span><strong>$18</strong></div>
-<div class="subhead">Biscoff Cinnamon Rolls</div><div class="price-row"><span>1 roll</span><strong>$6</strong></div><div class="price-row"><span>2 rolls</span><strong>$12</strong></div><div class="price-row"><span>4 rolls</span><strong>$19</strong></div>
-<div class="note">Same sweet rolls, just a little more Biscoff magic!</div></article></div>
-<div class="coming"><strong>More Menu Items</strong><span>♡ COMING SOON ♡</span></div></section>
-
-<section class="preorder" id="preorder">
-<h2 class="section-title">♡ Preorder Your Treats ♡</h2>
-<p class="preorder-intro">Choose your packages, add them to your cart, and send your preorder request. Availability is updated as orders are placed.</p>
-<div class="product-list" id="product-list"><p>Loading current availability…</p></div>
-<div class="cart-panel"><h3 class="section-title" style="font-size:2.2rem">♡ Your Cart ♡</h3><div id="cart-items">Your cart is empty.</div><p style="text-align:right;font-size:1.2rem"><strong>Total: <span id="cart-total">$0.00</span></strong></p></div>
+<div class="topline">♡ &nbsp; SWEET TREATS. BIG LOVE. &nbsp; ♡</div>
+<header><div class="kicker">Small-batch homemade treats</div><h1>Baked By Netta</h1><p class="tag">Homemade with love, one sweet bite at a time</p></header>
+<nav><a href="#home">Home</a><a href="#menu">Menu</a><a href="#preorder">Preorder / Cart</a><a href="#reviews">Reviews</a></nav>
+<section class="intro" id="home"><h2>Homemade Treats,<br>Made with Love ♡</h2><p>Every treat is made with care and a little sweetness. Browse the menu and send a preorder request when you're ready.</p><a class="btn primary" href="#preorder">Shop the Menu ♡</a></section>
+<section class="menu" id="menu"><h2 class="section-title">♡ Menu ♡</h2><div class="menu-accordions">
+<details><summary>Cookies</summary><div class="menu-detail">
+<div class="price-row"><span>Chocolate Chip, Sugar Cookie &amp; Churro</span><strong>4/$6 · 6/$9 · 12/$16</strong></div>
+<div class="price-row"><span>Coffee Cake Cookie</span><strong>4/$7 · 6/$10 · 12/$17</strong></div>
+</div></details>
+<details><summary>Cinnamon Rolls</summary><div class="menu-detail">
+<div class="price-row"><span>Classic</span><strong>2/$9 · 4/$18</strong></div>
+<div class="price-row"><span>Biscoff</span><strong>2/$12 · 4/$19</strong></div>
+</div></details>
+</div><div class="coming"><strong>More menu items coming soon ♡</strong></div></section>
+<section class="preorder" id="preorder"><h2 class="section-title">♡ Preorder Your Treats ♡</h2>
+<p class="preorder-intro">Choose a flavor and package size, add it to your cart, and send your preorder request. Items marked sold out can be restocked manually.</p>
+<div class="product-category"><details open><summary>Cookies</summary><div class="product-list" id="cookie-products"></div></details></div>
+<div class="product-category"><details open><summary>Cinnamon Rolls</summary><div class="product-list" id="roll-products"></div></details></div>
+<div class="cart-panel"><h3 class="section-title" style="font-size:2.2rem">♡ Your Cart ♡</h3><div id="cart-items">Your cart is empty.</div><p class="cart-total"><strong>Subtotal: <span id="cart-total">$0.00</span></strong></p><p id="delivery-total-note" class="small">Delivery fee is calculated at checkout.</p></div>
 <form class="checkout-panel" id="preorder-form">
 <h3 class="section-title" style="font-size:2.2rem">♡ Your Details ♡</h3>
 <label for="customer-name">Your name</label><input id="customer-name" name="name" maxlength="80" autocomplete="name" required>
 <label for="customer-phone">Phone number</label><input id="customer-phone" name="phone" type="tel" maxlength="30" autocomplete="tel" required>
-<label for="pickup-date">Preferred pickup date (at least 2 days in advance)</label><input id="pickup-date" name="pickupDate" type="date" required>
+<label>How would you like to receive your order?</label><div class="choice-row">
+<label><input type="radio" name="fulfillment" value="pickup" checked> Pickup</label>
+<label><input type="radio" name="fulfillment" value="delivery"> Local delivery</label>
+</div>
+<div id="delivery-fields" hidden>
+<label for="delivery-address">Delivery address</label><input id="delivery-address" name="deliveryAddress" autocomplete="street-address" maxlength="180">
+<label for="delivery-city">City / town</label><input id="delivery-city" name="deliveryCity" autocomplete="address-level2" maxlength="80">
+<p class="small">Methuen and Lawrence delivery is $4. Delivery fees for surrounding cities vary by location and will be confirmed with you.</p>
+</div>
+<label for="pickup-date">Preferred pickup or delivery date (at least 2 days in advance)</label><input id="pickup-date" name="pickupDate" type="date" required>
 <label for="order-notes">Order notes (optional)</label><textarea id="order-notes" name="notes" maxlength="1000" placeholder="Flavors or other details…"></textarea>
-<div class="checkout-note"><strong>Order Confirmation:</strong> I will contact you within 24 hours regarding your order. Your order and preferred pickup date are not confirmed until I contact you. Please wait for me to confirm availability and pickup details before considering your order finalized.</div>
+<div class="checkout-note"><strong>Order Confirmation:</strong> I will contact you within 24 hours regarding your order. Your order and preferred date are not confirmed until I contact you. Please wait for me to confirm availability and pickup or delivery details before considering your order finalized. No payment is collected when you submit this request.</div>
 <div style="text-align:center"><button class="cart-button" id="place-order" type="submit">♡ Submit Preorder ♡</button></div>
 <p id="preorder-status" role="status" aria-live="polite"></p>
 </form>
-<p class="small" style="text-align:center">Submitting a preorder request does not collect payment. Payment arrangements will be made after I contact you.</p>
+<p class="small" style="text-align:center">Payment instructions for Venmo or PayPal will be sent after I contact you and confirm your order.</p>
 </section>
-
-<section class="order" id="order"><h2 class="section-title">♡ Ready to Order? ♡</h2><p>Text to order.</p>
-<div class="order-cards"><div class="order-card"><h3>Text to Order</h3><p>Send a text with the treats and quantities you'd like.</p><a class="btn" href="sms:+15087945595">Text 508-794-5595</a></div>
-</div></section>
-<section class="pay" id="payment"><h2 class="section-title">♡ Payments ♡</h2><p>PayPal and Venmo are for <strong>payments only</strong>. Please place your order by text first.</p><a class="btn" href="https://www.paypal.me/Robynettaa" target="_blank" rel="noopener">Pay with PayPal</a> <a class="btn" href="https://www.venmo.com/u/BakedByNetta_" target="_blank" rel="noopener">Pay with Venmo</a></section>
-
-<section class="reviews" id="reviews">
-<h2 class="section-title">♡ Sweet Words from Customers ♡</h2>
-<p class="reviews-intro">Have you tried something from Baked By Netta? I’d love to hear what you think! Share your experience and, if you’d like, a photo of your treats.</p>
-<div class="review-status" id="review-status" role="status" aria-live="polite">Loading customer reviews…</div>
-<div class="review-grid" id="review-grid" aria-live="polite"></div>
+<section class="reviews" id="reviews"><h2 class="section-title">Customer Reviews ♡</h2>
+<p class="reviews-intro">Have you tried something from Baked By Netta? I’d love to hear what you think!</p>
+<div class="review-status" id="review-status" role="status" aria-live="polite">Loading customer reviews…</div><div class="review-grid" id="review-grid" aria-live="polite"></div>
 <form class="review-form" id="customer-review-form" enctype="multipart/form-data">
-  <h3>♡ Leave a Review ♡</h3>
-  <p class="form-note">Tell us about your treats! Photo uploads are optional. Reviews appear automatically after spam checks.</p>
-  <label for="review-name">Your name</label>
-  <input id="review-name" type="text" name="customer-name" maxlength="80" autocomplete="name" placeholder="Your name" required>
-  <label>Your rating</label>
-  <div class="rating-options">
-    <label><input type="radio" name="rating" value="5" required> ★★★★★</label>
-    <label><input type="radio" name="rating" value="4"> ★★★★</label>
-    <label><input type="radio" name="rating" value="3"> ★★★</label>
-    <label><input type="radio" name="rating" value="2"> ★★</label>
-    <label><input type="radio" name="rating" value="1"> ★</label>
-  </div>
-  <label for="review-message">Your review</label>
-  <textarea id="review-message" name="review" maxlength="1500" placeholder="What did you think?..." required></textarea>
-  <label for="review-photo">Add a photo (optional)</label>
-  <input id="review-photo" type="file" name="review-photo" accept="image/jpeg,image/png,image/webp,image/gif">
-  <div class="spam-trap" aria-hidden="true">
-    <label for="website-field">Leave this field empty</label>
-    <input id="website-field" type="text" name="website" tabindex="-1" autocomplete="off">
-  </div>
-  <div class="submit-row"><button class="btn" id="review-submit" type="submit">♡ Submit My Review ♡</button></div>
-  <p class="privacy-note">Reviews appear automatically after basic spam checks. Please only upload photos you have permission to share.</p>
-</form>
-</section>
+<h3>♡ Leave a Review ♡</h3><p class="form-note" style="text-align:center">Share your experience. Reviews appear automatically after spam checks.</p>
+<label for="review-name">Your name</label><input id="review-name" type="text" name="customer-name" maxlength="80" autocomplete="name" placeholder="Your name" required>
+<label>Your rating</label><div class="rating-options">
+<label><input type="radio" name="rating" value="5" required> ★★★★★</label><label><input type="radio" name="rating" value="4"> ★★★★</label><label><input type="radio" name="rating" value="3"> ★★★</label><label><input type="radio" name="rating" value="2"> ★★</label><label><input type="radio" name="rating" value="1"> ★</label></div>
+<label for="review-message">Your review</label><textarea id="review-message" name="review" maxlength="1500" placeholder="What did you think?..." required></textarea>
+<label for="review-photo">Add a photo (optional)</label><input id="review-photo" type="file" name="review-photo" accept="image/jpeg,image/png,image/webp,image/gif">
+<div class="spam-trap" aria-hidden="true"><label for="website-field">Leave this field empty</label><input id="website-field" type="text" name="website" tabindex="-1" autocomplete="off"></div>
+<div class="submit-row"><button class="btn primary" id="review-submit" type="submit">♡ Submit My Review ♡</button></div>
+<p class="privacy-note">Reviews appear automatically after basic spam checks. Please only upload photos you have permission to share.</p>
+</form></section>
 <section class="tiktok" id="follow"><h2 class="section-title">♡ Follow My TikTok ♡</h2><p>Follow along for fresh bakes, sweet treats, and updates!</p><a class="btn" href="https://www.tiktok.com/@_bakedbynetta" target="_blank" rel="noopener">Follow @_bakedbynetta</a></section>
-<footer><div style="font:2.2rem 'Brush Script MT','Segoe Script',cursive">Baked By Netta ♡</div><div class="small">SWEET TREATS. BIG LOVE. ♡</div><div style="margin-top:18px;font-size:1rem">Thank you for supporting my small business! ♡</div></footer>
+<footer><div style="font:2.2rem 'Brush Script MT','Segoe Script',cursive">Baked By Netta ♡</div><div class="small">SWEET TREATS. BIG LOVE. ♡</div><div style="margin-top:16px">Thank you for supporting my small business! ♡</div></footer>
 </div>
 <script>
 (() => {
@@ -277,74 +233,94 @@ footer{background:#35160f;color:#ffeaf0;border-top:5px solid #efa9c1;padding:34p
   loadReviews();
 })();
 </script>
-
-
 <script>
 (() => {
  const products=[
-  ["cookie4","Cookies — 4 pack",6],["cookie6","Cookies — 6 pack",9],["cookie12","Cookies — 12 pack",16],
-  ["classic1","Classic Cinnamon Rolls — 1",5],["classic2","Classic Cinnamon Rolls — 2",9],["classic4","Classic Cinnamon Rolls — 4",18],
-  ["biscoff1","Biscoff Cinnamon Rolls — 1",6],["biscoff2","Biscoff Cinnamon Rolls — 2",12],["biscoff4","Biscoff Cinnamon Rolls — 4",19]
+  {id:"chocchip4",name:"Chocolate Chip Cookie",size:"4 cookies",price:6,group:"cookie"},
+  {id:"chocchip6",name:"Chocolate Chip Cookie",size:"6 cookies",price:9,group:"cookie"},
+  {id:"chocchip12",name:"Chocolate Chip Cookie",size:"12 cookies",price:16,group:"cookie"},
+  {id:"sugar4",name:"Sugar Cookie",size:"4 cookies",price:6,group:"cookie"},
+  {id:"sugar6",name:"Sugar Cookie",size:"6 cookies",price:9,group:"cookie"},
+  {id:"sugar12",name:"Sugar Cookie",size:"12 cookies",price:16,group:"cookie"},
+  {id:"churro4",name:"Churro Cookie",size:"4 cookies",price:6,group:"cookie"},
+  {id:"churro6",name:"Churro Cookie",size:"6 cookies",price:9,group:"cookie"},
+  {id:"churro12",name:"Churro Cookie",size:"12 cookies",price:16,group:"cookie"},
+  {id:"coffeecake4",name:"Coffee Cake Cookie",size:"4 cookies",price:7,group:"cookie"},
+  {id:"coffeecake6",name:"Coffee Cake Cookie",size:"6 cookies",price:10,group:"cookie"},
+  {id:"coffeecake12",name:"Coffee Cake Cookie",size:"12 cookies",price:17,group:"cookie"},
+  {id:"classic2",name:"Classic Cinnamon Roll",size:"2 rolls",price:9,group:"roll"},
+  {id:"classic4",name:"Classic Cinnamon Roll",size:"4 rolls",price:18,group:"roll"},
+  {id:"biscoff2",name:"Biscoff Cinnamon Roll",size:"2 rolls",price:12,group:"roll"},
+  {id:"biscoff4",name:"Biscoff Cinnamon Roll",size:"4 rolls",price:19,group:"roll"}
  ];
- const cart={}; let inventory={};
- const productList=document.getElementById("product-list");
- const cartItems=document.getElementById("cart-items");
- const totalEl=document.getElementById("cart-total");
- const status=document.getElementById("preorder-status");
- const form=document.getElementById("preorder-form");
- const submit=document.getElementById("place-order");
+ const cart={};let inventory={};
+ const cookieList=document.getElementById("cookie-products"),rollList=document.getElementById("roll-products");
+ const cartItems=document.getElementById("cart-items"),totalEl=document.getElementById("cart-total"),status=document.getElementById("preorder-status");
+ const form=document.getElementById("preorder-form"),submit=document.getElementById("place-order");
  const money=n=>"$"+Number(n).toFixed(2);
- function minimumDate(){
-   const d=new Date(); d.setHours(0,0,0,0); d.setDate(d.getDate()+2);
-   const local=new Date(d.getTime()-d.getTimezoneOffset()*60000);
-   return local.toISOString().slice(0,10);
- }
- document.getElementById("pickup-date").min=minimumDate();
+ function minimumDate(){const d=new Date();d.setHours(0,0,0,0);d.setDate(d.getDate()+2);const local=new Date(d.getTime()-d.getTimezoneOffset()*60000);return local.toISOString().slice(0,10);}
+ const dateInput=document.getElementById("pickup-date");dateInput.min=minimumDate();
+ const deliveryFields=document.getElementById("delivery-fields"),deliveryAddress=document.getElementById("delivery-address"),deliveryCity=document.getElementById("delivery-city");
+ form.querySelectorAll('input[name="fulfillment"]').forEach(r=>r.addEventListener("change",()=>{
+  const delivery=form.elements.fulfillment.value==="delivery";deliveryFields.hidden=!delivery;deliveryAddress.required=delivery;deliveryCity.required=delivery;renderCart();
+ }));
+ function cartSubtotal(){return products.reduce((sum,p)=>sum+(cart[p.id]||0)*p.price,0);}
+ function feePreview(){if(form.elements.fulfillment.value!=="delivery")return 0;const city=deliveryCity.value.trim().toLowerCase();return city==="methuen"||city==="lawrence"?4:null;}
  function renderProducts(){
-  productList.replaceChildren();
-  products.forEach(([id,name,price])=>{
-   const stock=Number(inventory[id]?.stock||0);
-   const card=document.createElement("article"); card.className="product-option";
-   const h=document.createElement("h3");h.textContent=name;card.append(h);
-   const p=document.createElement("p");p.textContent=money(price);card.append(p);
-   const available=document.createElement("p");available.textContent=stock>0?stock+" available":"SOLD OUT";available.className=stock>0?"small":"sold-out";card.append(available);
-   const button=document.createElement("button");button.type="button";button.textContent="Add to Cart";button.disabled=stock<1;
-   button.addEventListener("click",()=>{if((cart[id]||0)>=stock){status.textContent="That is the available quantity for this package.";return;}cart[id]=(cart[id]||0)+1;renderCart();});card.append(button);productList.append(card);
-  });
+  for(const [list,group] of [[cookieList,"cookie"],[rollList,"roll"]]){
+   list.replaceChildren();
+   const grouped=[...new Set(products.filter(p=>p.group===group).map(p=>p.name))];
+   grouped.forEach(name=>{
+    const variants=products.filter(p=>p.name===name),card=document.createElement("article");card.className="product-option";
+    const h=document.createElement("h3");h.textContent=name;card.append(h);
+    const select=document.createElement("select");select.setAttribute("aria-label","Choose package size for "+name);
+    variants.forEach(p=>{const opt=document.createElement("option");opt.value=p.id;opt.textContent=p.size+" — "+money(p.price)+(Number(inventory[p.id]?.stock||0)>0?"":" (Sold out)");opt.disabled=Number(inventory[p.id]?.stock||0)<1;select.append(opt);});
+    const firstAvailable=variants.find(p=>Number(inventory[p.id]?.stock||0)>0);if(firstAvailable)select.value=firstAvailable.id;
+    const button=document.createElement("button");button.type="button";button.textContent="Add to Cart";button.disabled=!firstAvailable;
+    const availability=document.createElement("p");availability.className="small";availability.textContent=variants.some(p=>Number(inventory[p.id]?.stock||0)>0)?"Choose a package size":"Sold out";
+    button.addEventListener("click",()=>{const id=select.value,p=products.find(x=>x.id===id),stock=Number(inventory[id]?.stock||0);if(!p||stock<1)return;if((cart[id]||0)>=stock){status.textContent="That is the available quantity for this package.";return;}cart[id]=(cart[id]||0)+1;renderCart();});
+    card.append(select,availability,button);list.append(card);
+   });
+  }
  }
  function renderCart(){
-  cartItems.replaceChildren();let total=0;let count=0;
-  products.forEach(([id,name,price])=>{
-   const qty=cart[id]||0;if(!qty)return;count+=qty;total+=qty*price;
+  cartItems.replaceChildren();let count=0;
+  products.forEach(p=>{const qty=cart[p.id]||0;if(!qty)return;count+=qty;
    const line=document.createElement("div");line.className="cart-line";
-   const label=document.createElement("span");label.textContent=name+" × "+qty;
-   const right=document.createElement("span");right.textContent=money(qty*price)+" ";
-   const remove=document.createElement("button");remove.type="button";remove.textContent="−";remove.setAttribute("aria-label","Remove one "+name);remove.addEventListener("click",()=>{cart[id]--;if(cart[id]<=0)delete cart[id];renderCart();});
+   const label=document.createElement("span");label.textContent=p.name+" ("+p.size+") × "+qty;
+   const right=document.createElement("span");right.textContent=money(qty*p.price)+" ";
+   const remove=document.createElement("button");remove.type="button";remove.textContent="−";remove.setAttribute("aria-label","Remove one "+p.name+" "+p.size);remove.addEventListener("click",()=>{cart[p.id]--;if(cart[p.id]<=0)delete cart[p.id];renderCart();});
    right.append(remove);line.append(label,right);cartItems.append(line);
   });
   if(!count)cartItems.textContent="Your cart is empty.";
-  totalEl.textContent=money(total);renderProducts();
+  totalEl.textContent=money(cartSubtotal());
+  const fee=feePreview(),note=document.getElementById("delivery-total-note");
+  note.textContent=form.elements.fulfillment.value!=="delivery"?"Pickup selected — no delivery fee.":fee===4?"Delivery fee: $4.00 · Estimated total: "+money(cartSubtotal()+4):"Delivery fee varies by city and will be confirmed. Current subtotal: "+money(cartSubtotal());
+  renderProducts();
  }
+ deliveryCity.addEventListener("input",renderCart);
  async function loadInventory(){
-  try{const r=await fetch("/.netlify/functions/get-inventory");const data=await r.json();if(!r.ok)throw new Error();inventory=data.inventory||{};renderProducts();}
-  catch{productList.textContent="Availability is temporarily unavailable. Please try again shortly.";}
+  try{const r=await fetch("/.netlify/functions/get-inventory",{cache:"no-store"});const data=await r.json();if(!r.ok)throw new Error();inventory=data.inventory||{};renderProducts();renderCart();}
+  catch{cookieList.textContent="Availability is temporarily unavailable. Please try again shortly.";rollList.textContent="";}
  }
  form.addEventListener("submit",async e=>{
   e.preventDefault();status.textContent="";
-  const items=products.filter(([id])=>cart[id]).map(([id])=>({id,quantity:cart[id]}));
+  const items=products.filter(p=>cart[p.id]).map(p=>({id:p.id,quantity:cart[p.id]}));
   if(!items.length){status.textContent="Please add at least one item to your cart.";return;}
-  const pickupDate=document.getElementById("pickup-date").value;
-  if(!pickupDate||pickupDate<minimumDate()){status.textContent="Please choose a pickup date at least 2 days in advance.";return;}
+  const pickupDate=dateInput.value;if(!pickupDate||pickupDate<minimumDate()){status.textContent="Please choose a preferred date at least 2 days in advance.";return;}
+  const fulfillment=form.elements.fulfillment.value,city=deliveryCity.value.trim(),address=deliveryAddress.value.trim();
+  if(fulfillment==="delivery"&&(!city||!address)){status.textContent="Please enter your delivery address and city or town.";return;}
   submit.disabled=true;submit.textContent="Sending preorder…";
   try{
-   const r=await fetch("/.netlify/functions/submit-order",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:form.elements.namedItem("name").value,phone:form.elements.namedItem("phone").value,notes:form.elements.namedItem("notes").value,pickupDate,items})});
+   const payload={name:form.elements.namedItem("name").value,phone:form.elements.namedItem("phone").value,notes:form.elements.namedItem("notes").value,pickupDate,fulfillment,deliveryCity:city,deliveryAddress:address,items};
+   const r=await fetch("/.netlify/functions/submit-order",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
    const data=await r.json();if(!r.ok)throw new Error(data.error||"Your preorder could not be submitted.");
-   form.reset();Object.keys(cart).forEach(k=>delete cart[k]);document.getElementById("pickup-date").min=minimumDate();status.textContent=data.message+" Your request number is "+data.orderId.slice(0,8)+".";renderCart();await loadInventory();
+   form.reset();Object.keys(cart).forEach(k=>delete cart[k]);dateInput.min=minimumDate();deliveryFields.hidden=true;deliveryAddress.required=false;deliveryCity.required=false;
+   status.textContent=data.message+" Request number: "+data.orderId.slice(0,8)+".";renderCart();
   }catch(err){status.textContent=err.message||"Something went wrong. Please try again.";}
   finally{submit.disabled=false;submit.textContent="♡ Submit Preorder ♡";}
  });
- loadInventory();renderCart();
+ renderCart();loadInventory();
 })();
 </script>
-
 </body></html>
