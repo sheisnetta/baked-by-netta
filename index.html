@@ -317,6 +317,9 @@ footer{background:linear-gradient(110deg,#f8dce5,#fff0f4,#f4d4df);border-top:1px
  const money=n=>"$"+Number(n).toFixed(2);
  function minimumDate(){const d=new Date();d.setHours(0,0,0,0);d.setDate(d.getDate()+2);const local=new Date(d.getTime()-d.getTimezoneOffset()*60000);return local.toISOString().slice(0,10);}
  const dateInput=document.getElementById("pickup-date");dateInput.min=minimumDate();
+ const dateWarning=document.createElement("p");dateWarning.className="small";dateWarning.setAttribute("role","alert");dateInput.after(dateWarning);
+ function enforceDate(){dateInput.min=minimumDate();if(dateInput.value && dateInput.value<dateInput.min){dateInput.value="";dateWarning.textContent="Please choose a date at least 2 days in advance. Earliest available: "+dateInput.min+".";}else if(dateInput.value){dateWarning.textContent="";}}
+ dateInput.addEventListener("input",enforceDate);dateInput.addEventListener("change",enforceDate);dateInput.addEventListener("focus",()=>{dateInput.min=minimumDate();});
  const deliveryFields=document.getElementById("delivery-fields"),deliveryAddress=document.getElementById("delivery-address"),deliveryCity=document.getElementById("delivery-city");
  form.querySelectorAll('input[name="fulfillment"]').forEach(r=>r.addEventListener("change",()=>{
   const delivery=form.elements.fulfillment.value==="delivery";deliveryFields.hidden=!delivery;deliveryAddress.required=delivery;deliveryCity.required=delivery;renderCart();
