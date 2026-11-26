@@ -173,7 +173,7 @@ footer{background:linear-gradient(110deg,#f8dce5,#fff0f4,#f4d4df);border-top:1px
 <p class="preorder-intro">Choose your favorites, select a package size, and send your preorder request.</p>
 <div class="product-category"><details><summary>Cookies</summary><div class="product-list" id="cookie-products"></div></details></div>
 <div class="product-category"><details><summary>Cinnamon Rolls</summary><div class="product-list" id="roll-products"></div></details></div>
-<div class="cart-panel"><h3 class="section-title" style="font-size:2.2rem">♡ Your Cart ♡</h3><div id="cart-items">Your cart is empty.</div><p class="cart-total"><strong>Subtotal: <span id="cart-total">$0.00</span></strong></p><p id="delivery-total-note" class="small">Delivery fee is calculated at checkout.</p></div>
+<div class="cart-panel"><h3 class="section-title" style="font-size:2.2rem">♡ Your Cart ♡</h3><div id="cart-items">Your cart is empty.</div><p class="cart-total"><strong>Subtotal: <span id="cart-total">$0.00</span></strong></p><p id="delivery-total-note" class="small">Delivery fee is calculated at checkout.</p><p class="cart-total" aria-live="polite"><strong>Estimated total: <span id="checkout-total">$0.00</span></strong></p></div>
 <form class="checkout-panel" id="preorder-form">
 <h3 class="section-title" style="font-size:2.2rem">♡ Your Details ♡</h3>
 <label for="customer-name">Your name</label><input id="customer-name" name="name" maxlength="80" autocomplete="name" required>
@@ -351,8 +351,8 @@ footer{background:linear-gradient(110deg,#f8dce5,#fff0f4,#f4d4df);border-top:1px
   });
   if(!count)cartItems.textContent="Your cart is empty.";
   totalEl.textContent=money(cartSubtotal());
-  const fee=feePreview(),note=document.getElementById("delivery-total-note");
-  note.textContent=form.elements.fulfillment.value!=="delivery"?"Pickup selected — no delivery fee.":fee===4?"Delivery fee: $4.00 · Estimated total: "+money(cartSubtotal()+4):"Delivery fee varies by city and will be confirmed. Current subtotal: "+money(cartSubtotal());
+  const fee=feePreview(),note=document.getElementById("delivery-total-note");document.getElementById("checkout-total").textContent=fee===null?money(cartSubtotal())+" + delivery fee":money(cartSubtotal()+fee);
+  note.textContent=form.elements.fulfillment.value!=="delivery"?"Pickup selected — no delivery fee.":fee===4?"Delivery fee: $4.00":"Delivery fee varies by city and will be confirmed. Current subtotal: "+money(cartSubtotal());
   renderProducts();
  }
  deliveryCity.addEventListener("input",renderCart);
