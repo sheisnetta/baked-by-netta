@@ -126,6 +126,13 @@ section{padding:28px 22px;border-bottom:1px solid #e8c6d0}
 .review-form h3{font-size:1.8rem}
 .tiktok{background:#fff4f7}
 footer{background:linear-gradient(110deg,#f8dce5,#fff0f4,#f4d4df);border-top:1px solid #dcb8c5;color:#895d6c;padding:24px 18px}
+/* Mobile date-field spacing and sizing fix */
+#preorder-form label[for="pickup-date"]{display:block;line-height:1.45;margin:20px 0 8px;clear:both}
+#preorder-form input[type="date"]{display:block;width:100%;min-width:0;max-width:100%;height:48px;margin:0 0 8px;padding:10px 12px;box-sizing:border-box;-webkit-appearance:none;appearance:none;border:1px solid #d8bdc3;border-radius:10px;background:#fff;color:var(--ink);font:1rem Georgia,serif}
+@media(max-width:600px){
+ #preorder-form label[for="pickup-date"]{margin-top:22px}
+ #preorder-form input[type="date"]{font-size:16px}
+}
 @media(max-width:600px){
  .intro{grid-template-columns:1fr 1fr;min-height:175px}.hero-art{min-height:175px;font-size:2.8rem}
  .hero-copy{padding:16px 10px}.intro h2{font-size:1.75rem}.intro p{font-size:.72rem;line-height:1.35}
