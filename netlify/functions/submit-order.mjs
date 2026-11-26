@@ -36,7 +36,7 @@ export default async request => {
   const deliveryCity = String(data.deliveryCity || "").trim().slice(0,80);
   const deliveryAddress = String(data.deliveryAddress || "").trim().slice(0,180);
   const items = Array.isArray(data.items) ? data.items : [];
-  if (!name || !phone || !/^\\d{4}-\\d{2}-\\d{2}$/.test(pickupDate) || !["pickup","delivery"].includes(fulfillment) || !items.length || items.length > 16) {
+  if (!name || !phone || !/^\d{4}-\d{2}-\d{2}$/.test(pickupDate) || !["pickup","delivery"].includes(fulfillment) || !items.length || items.length > 16) {
     return reply({ error: "Please enter your name, phone number, preferred date, fulfillment method, and at least one item." }, 400);
   }
   if (pickupDate < addDays(localDateInBoston(), 2)) return reply({ error: "Please choose a preferred date at least 2 days in advance." }, 400);
@@ -52,7 +52,7 @@ export default async request => {
     cleanItems.push({ id:key, name:product.name, quantity:qty, unitPrice:product.price, lineTotal:product.price*qty });
     subtotal += product.price*qty;
   }
-  const normalizedCity = deliveryCity.toLowerCase().replace(/\\s+/g, " ");
+  const normalizedCity = deliveryCity.toLowerCase().replace(/\s+/g, " ");
   const deliveryFee = fulfillment === "pickup" ? 0 : (normalizedCity === "methuen" || normalizedCity === "lawrence" ? 4 : null);
   const total = deliveryFee === null ? null : subtotal + deliveryFee;
   const order = { id:randomUUID(), name, phone, notes, pickupDate, fulfillment, deliveryCity:fulfillment === "delivery" ? deliveryCity : "", deliveryAddress:fulfillment === "delivery" ? deliveryAddress : "", items:cleanItems, subtotal, deliveryFee, total, status:"New", createdAt:new Date().toISOString() };
