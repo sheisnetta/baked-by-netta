@@ -141,7 +141,7 @@ footer{background:linear-gradient(110deg,#f8dce5,#fff0f4,#f4d4df);border-top:1px
 <div class="topline">♡ &nbsp; SWEET TREATS. BIG LOVE. &nbsp; ♡</div>
 <header><div class="kicker">Small-batch homemade treats</div><h1>Baked By Netta</h1><p class="tag">A little sweetness in every bite</p></header>
 <nav><a href="#home">Home</a><a href="#menu">Menu</a><a href="#preorder">Preorder / Cart</a><a href="#payment">Payments</a><a href="#reviews">Reviews</a></nav>
-<section class="intro" id="home"><div class="hero-art" aria-hidden="true">♡</div><div class="hero-copy"><h2>A Little<br>Something Sweet</h2><p>Small-batch favorites for your sweetest moments.</p><a class="btn primary" href="#menu">Shop the Menu</a></div></section>
+<section class="intro" id="home"><div class="hero-art" aria-hidden="true"></div><div class="hero-copy"><h2>A Little<br>Something Sweet</h2><p>Small-batch favorites for your sweetest moments.</p><a class="btn primary" href="#menu">Shop the Menu</a></div></section>
 <section class="menu" id="menu"><h2 class="section-title">♡ Menu ♡</h2><div class="menu-accordions">
 <details><summary>Cookies</summary><div class="menu-detail">
 <div class="price-row"><span>Chocolate Chip</span></div>
@@ -155,7 +155,7 @@ footer{background:linear-gradient(110deg,#f8dce5,#fff0f4,#f4d4df);border-top:1px
 </div></details>
 </div><div class="coming"><strong>More menu items coming soon ♡</strong></div></section>
 <section class="preorder" id="preorder"><h2 class="section-title">♡ Preorder Your Treats ♡</h2>
-<p class="preorder-intro">Choose a flavor and package size, add it to your cart, and send your preorder request. Items marked sold out can be restocked manually.</p>
+<p class="preorder-intro">Choose your favorites, select a package size, and send your preorder request.</p>
 <div class="product-category"><details><summary>Cookies</summary><div class="product-list" id="cookie-products"></div></details></div>
 <div class="product-category"><details><summary>Cinnamon Rolls</summary><div class="product-list" id="roll-products"></div></details></div>
 <div class="cart-panel"><h3 class="section-title" style="font-size:2.2rem">♡ Your Cart ♡</h3><div id="cart-items">Your cart is empty.</div><p class="cart-total"><strong>Subtotal: <span id="cart-total">$0.00</span></strong></p><p id="delivery-total-note" class="small">Delivery fee is calculated at checkout.</p></div>
@@ -178,7 +178,7 @@ footer{background:linear-gradient(110deg,#f8dce5,#fff0f4,#f4d4df);border-top:1px
 <div style="text-align:center"><button class="cart-button" id="place-order" type="submit">♡ Submit Preorder ♡</button></div>
 <p id="preorder-status" role="status" aria-live="polite"></p>
 </form>
-<p class="small" style="text-align:center">Payment instructions for Venmo or PayPal will be sent after I contact you and confirm your order.</p>
+
 </section>
 <section class="pay" id="payment"><h2 class="section-title">♡ Payment Options ♡</h2><p>Once I contact you and confirm your order, you can complete payment using either option below.</p><a class="btn" href="https://www.paypal.me/Robynettaa" target="_blank" rel="noopener">Pay with PayPal</a> <a class="btn" href="https://www.venmo.com/u/BakedByNetta_" target="_blank" rel="noopener">Pay with Venmo</a></section>
 <section class="reviews" id="reviews"><h2 class="section-title">Customer Reviews ♡</h2>
@@ -366,3 +366,23 @@ footer{background:linear-gradient(110deg,#f8dce5,#fff0f4,#f4d4df);border-top:1px
 })();
 </script>
 </body></html>
+<style>
+/* Refined hero panel: soft satin-inspired blush, without the oversized heart or crossing lines */
+.hero-art{
+ position:relative;isolation:isolate;overflow:hidden;
+ background:
+  radial-gradient(ellipse at 24% 28%,rgba(255,255,255,.92) 0,rgba(255,255,255,.36) 24%,transparent 48%),
+  radial-gradient(ellipse at 78% 72%,rgba(219,143,166,.34) 0,transparent 46%),
+  linear-gradient(128deg,#f8dfe7 0%,#fff4f6 42%,#edbdcc 100%);
+}
+.hero-art:before{
+ content:"";position:absolute;inset:-25%;
+ background:linear-gradient(118deg,transparent 28%,rgba(255,255,255,.48) 42%,rgba(255,255,255,.08) 51%,transparent 66%);
+ transform:rotate(-8deg);filter:blur(8px);
+}
+.hero-art:after{
+ content:"";position:absolute;left:18%;right:18%;top:50%;
+ height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,106,.62),transparent);
+}
+@media(max-width:600px){.hero-art{min-height:175px}}
+</style>
