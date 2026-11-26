@@ -1,15 +1,32 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Baked By Netta | Owner Dashboard</title>
 <style>
-:root{--pink:#efa9c1;--brown:#4a2119;--pale:#f9dce6}*{box-sizing:border-box}body{margin:0;padding:20px;background:linear-gradient(135deg,#f8dce5,#fff0f4);color:var(--brown);font-family:Georgia,serif}.wrap{max-width:1000px;margin:auto;background:#fffaf7;border:2px solid var(--pink);border-radius:24px;padding:24px;box-shadow:0 12px 35px #54201620}h1,h2{font-family:'Brush Script MT','Segoe Script',cursive;text-align:center}h1{font-size:3rem;margin:5px}label{display:block;font-weight:bold;margin:12px 0 6px}input,select{padding:10px;border:1px solid #d99aad;border-radius:9px;width:100%;max-width:340px}button{padding:10px 15px;border:0;border-radius:20px;background:#35160f;color:#ffeaf0;cursor:pointer;margin:6px}button:disabled{opacity:.5}.login{text-align:center;padding:25px}.products,.orders{margin-top:25px}.stock-row,.order{background:#fff1f5;border:1px solid var(--pink);border-radius:14px;padding:15px;margin:12px 0}.stock-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.stock-row input{width:90px}.order p{line-height:1.5}.muted{opacity:.75;font-size:.9rem}#message{min-height:24px;text-align:center;color:#873c53}
+:root{--blush:#f7dce5;--pink:#e9a9bd;--rose:#b96f86;--champagne:#c9a86a;--ink:#654b50;--paper:#fffaf9}
+*{box-sizing:border-box}body{margin:0;padding:20px;background:linear-gradient(135deg,#fff8fa,#f5dce5 55%,#fffaf8);color:var(--ink);font-family:Georgia,serif}
+.wrap{max-width:1050px;margin:auto;background:var(--paper);border:1px solid var(--champagne);border-radius:20px;padding:24px;box-shadow:0 12px 35px #8b56631c}
+h1,h2{font-family:'Brush Script MT','Segoe Script',cursive;text-align:center;color:#9a6274}h1{font-size:3.2rem;margin:5px}
+label{display:block;font-weight:bold;margin:12px 0 6px}input,select{padding:11px;border:1px solid #d8bdc3;border-radius:9px;width:100%;max-width:340px;background:white;color:var(--ink)}
+button{padding:10px 15px;border:1px solid var(--champagne);border-radius:20px;background:#bd8295;color:white;cursor:pointer;margin:6px}button:disabled{opacity:.5}
+.login{text-align:center;padding:25px}.stock-row,.order{background:#fff5f7;border:1px solid var(--champagne);border-radius:14px;padding:15px;margin:12px 0}
+.stock-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.stock-row input{width:90px}
+.order p{line-height:1.5;margin:8px 0}.muted{opacity:.75;font-size:.9rem}#message{min-height:24px;text-align:center;color:#8e6673}
 </style></head><body><main class="wrap"><h1>Baked By Netta ♡</h1><p style="text-align:center">Private Owner Dashboard</p>
-<div class="login" id="login"><p>Enter your owner password to manage stock and orders.</p><input id="password" type="password" autocomplete="current-password" placeholder="Owner password"><p><button id="login-button">Log In</button></p></div>
-<div id="dashboard" hidden><p style="text-align:right"><button id="refresh">Refresh</button><button id="logout">Log Out</button></p><h2>♡ Inventory ♡</h2><p class="muted">Set the number of packages available for each option. Set stock to 0 to show SOLD OUT.</p><div id="inventory"></div><h2>♡ Preorder Requests ♡</h2><div id="orders"></div></div><p id="message" role="status"></p></main>
+<div class="login" id="login"><p>Enter your owner password to manage stock and preorder requests.</p><input id="password" type="password" autocomplete="current-password" placeholder="Owner password"><p><button id="login-button">Log In</button></p></div>
+<div id="dashboard" hidden><p style="text-align:right"><button id="refresh">Refresh</button><button id="logout">Log Out</button></p>
+<h2>♡ Inventory ♡</h2><p class="muted">Set available packages for each flavor and size. Set stock to 0 to show SOLD OUT. New preorder requests do not reduce stock.</p><div id="inventory"></div>
+<h2>♡ Preorder Requests ♡</h2><div id="orders"></div></div><p id="message" role="status"></p></main>
 <script>
 (() => {
  const login=document.getElementById("login"),dash=document.getElementById("dashboard"),msg=document.getElementById("message");
  let password="";
- const names={cookie4:"Cookies — 4 pack",cookie6:"Cookies — 6 pack",cookie12:"Cookies — 12 pack",classic1:"Classic Cinnamon Rolls — 1",classic2:"Classic Cinnamon Rolls — 2",classic4:"Classic Cinnamon Rolls — 4",biscoff1:"Biscoff Cinnamon Rolls — 1",biscoff2:"Biscoff Cinnamon Rolls — 2",biscoff4:"Biscoff Cinnamon Rolls — 4"};
+ const names={
+  chocchip4:"Chocolate Chip Cookie — 4 cookies",chocchip6:"Chocolate Chip Cookie — 6 cookies",chocchip12:"Chocolate Chip Cookie — 12 cookies",
+  sugar4:"Sugar Cookie — 4 cookies",sugar6:"Sugar Cookie — 6 cookies",sugar12:"Sugar Cookie — 12 cookies",
+  churro4:"Churro Cookie — 4 cookies",churro6:"Churro Cookie — 6 cookies",churro12:"Churro Cookie — 12 cookies",
+  coffeecake4:"Coffee Cake Cookie — 4 cookies",coffeecake6:"Coffee Cake Cookie — 6 cookies",coffeecake12:"Coffee Cake Cookie — 12 cookies",
+  classic2:"Classic Cinnamon Roll — 2 rolls",classic4:"Classic Cinnamon Roll — 4 rolls",
+  biscoff2:"Biscoff Cinnamon Roll — 2 rolls",biscoff4:"Biscoff Cinnamon Roll — 4 rolls"
+ };
  async function api(method="GET",body){
   const r=await fetch("/.netlify/functions/admin",{method,headers:{"Authorization":"Bearer "+password,"Content-Type":"application/json"},body:body?JSON.stringify(body):undefined});
   const data=await r.json();if(!r.ok)throw new Error(data.error||"Request failed.");return data;
@@ -26,11 +43,15 @@
     row.append(title,input,save);inv.append(row);
    });
    const orders=document.getElementById("orders");orders.replaceChildren();
-   if(!data.orders.length){orders.textContent="No preorder requests yet.";}
+   if(!data.orders.length)orders.textContent="No preorder requests yet.";
    data.orders.forEach(order=>{
     const card=document.createElement("article");card.className="order";
     const title=document.createElement("h3");title.textContent=order.name+" — "+order.status;card.append(title);
-    const detail=document.createElement("p");detail.textContent="Phone: "+order.phone+" | Preferred pickup: "+order.pickupDate+" | Total: $"+Number(order.total).toFixed(2);card.append(detail);
+    const fulfillment=order.fulfillment==="delivery"?"Local delivery":"Pickup";
+    const fee=order.deliveryFee===null?"Delivery fee: To confirm": "Delivery fee: $"+Number(order.deliveryFee||0).toFixed(2);
+    const total=order.total===null?"Subtotal: $"+Number(order.subtotal).toFixed(2)+" · "+fee:"Total: $"+Number(order.total).toFixed(2)+" · "+fee;
+    const detail=document.createElement("p");detail.textContent="Phone: "+order.phone+" | Preferred date: "+order.pickupDate+" | "+fulfillment+" | "+total;card.append(detail);
+    if(order.deliveryAddress){const address=document.createElement("p");address.textContent="Delivery address: "+order.deliveryAddress+", "+order.deliveryCity;card.append(address);}
     const items=document.createElement("p");items.textContent=order.items.map(i=>i.name+" × "+i.quantity).join(" • ");card.append(items);
     if(order.notes){const note=document.createElement("p");note.textContent="Notes: "+order.notes;card.append(note);}
     const created=document.createElement("p");created.className="muted";created.textContent="Received: "+new Date(order.createdAt).toLocaleString();card.append(created);
