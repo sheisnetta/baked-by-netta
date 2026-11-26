@@ -1,15 +1,22 @@
 import { getStore } from "@netlify/blobs";
 
 const defaults = {
-  cookie4: { name: "Cookies — 4 pack", price: 6, stock: 0 },
-  cookie6: { name: "Cookies — 6 pack", price: 9, stock: 0 },
-  cookie12: { name: "Cookies — 12 pack", price: 16, stock: 0 },
-  classic1: { name: "Classic Cinnamon Rolls — 1", price: 5, stock: 0 },
-  classic2: { name: "Classic Cinnamon Rolls — 2", price: 9, stock: 0 },
-  classic4: { name: "Classic Cinnamon Rolls — 4", price: 18, stock: 0 },
-  biscoff1: { name: "Biscoff Cinnamon Rolls — 1", price: 6, stock: 0 },
-  biscoff2: { name: "Biscoff Cinnamon Rolls — 2", price: 12, stock: 0 },
-  biscoff4: { name: "Biscoff Cinnamon Rolls — 4", price: 19, stock: 0 }
+  chocchip4: { name: "Chocolate Chip Cookie — 4 cookies", price: 6, stock: 0 },
+  chocchip6: { name: "Chocolate Chip Cookie — 6 cookies", price: 9, stock: 0 },
+  chocchip12: { name: "Chocolate Chip Cookie — 12 cookies", price: 16, stock: 0 },
+  sugar4: { name: "Sugar Cookie — 4 cookies", price: 6, stock: 0 },
+  sugar6: { name: "Sugar Cookie — 6 cookies", price: 9, stock: 0 },
+  sugar12: { name: "Sugar Cookie — 12 cookies", price: 16, stock: 0 },
+  churro4: { name: "Churro Cookie — 4 cookies", price: 6, stock: 0 },
+  churro6: { name: "Churro Cookie — 6 cookies", price: 9, stock: 0 },
+  churro12: { name: "Churro Cookie — 12 cookies", price: 16, stock: 0 },
+  coffeecake4: { name: "Coffee Cake Cookie — 4 cookies", price: 7, stock: 0 },
+  coffeecake6: { name: "Coffee Cake Cookie — 6 cookies", price: 10, stock: 0 },
+  coffeecake12: { name: "Coffee Cake Cookie — 12 cookies", price: 17, stock: 0 },
+  classic2: { name: "Classic Cinnamon Roll — 2 rolls", price: 9, stock: 0 },
+  classic4: { name: "Classic Cinnamon Roll — 4 rolls", price: 18, stock: 0 },
+  biscoff2: { name: "Biscoff Cinnamon Roll — 2 rolls", price: 12, stock: 0 },
+  biscoff4: { name: "Biscoff Cinnamon Roll — 4 rolls", price: 19, stock: 0 }
 };
 
 export default async request => {
@@ -17,7 +24,10 @@ export default async request => {
   try {
     const store = getStore("baked-by-netta-store");
     const saved = await store.get("inventory", { type: "json" });
-    const inventory = saved && typeof saved === "object" ? saved : defaults;
+    const inventory = Object.fromEntries(Object.entries(defaults).map(([id, product]) => [id, {
+      ...product,
+      stock: Number.isInteger(Number(saved?.[id]?.stock)) && Number(saved[id].stock) >= 0 ? Number(saved[id].stock) : 0
+    }]));
     return Response.json({ inventory }, { headers: { "Cache-Control": "no-store" } });
   } catch {
     return Response.json({ error: "Inventory is temporarily unavailable." }, { status: 503 });
