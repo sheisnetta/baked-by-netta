@@ -125,7 +125,7 @@ footer{text-align:center;padding:30px 18px;background:#f5e8d8;border-top:1px sol
 <label>Your rating</label><div class="rating-options">
 <label><input type="radio" name="rating" value="5" required> ★★★★★</label><label><input type="radio" name="rating" value="4"> ★★★★</label><label><input type="radio" name="rating" value="3"> ★★★</label><label><input type="radio" name="rating" value="2"> ★★</label><label><input type="radio" name="rating" value="1"> ★</label></div>
 <label for="review-message">Your review</label><textarea id="review-message" name="review" maxlength="1500" placeholder="What did you think?..." required></textarea>
-<label for="review-photo">Add a photo (optional)</label><input id="review-photo" type="file" name="review-photo" accept="image/jpeg,image/png,image/webp,image/gif">
+
 <div class="spam-trap" aria-hidden="true"><label for="website-field">Leave this field empty</label><input id="website-field" type="text" name="website" tabindex="-1" autocomplete="off"></div>
 <div class="submit-row"><button class="btn primary" id="review-submit" type="submit">♡ Submit My Review ♡</button></div>
 <p class="privacy-note">Reviews appear automatically after basic spam checks. Please only upload photos you have permission to share.</p>
@@ -160,14 +160,6 @@ footer{text-align:center;padding:30px 18px;background:#f5e8d8;border-top:1px sol
       card.appendChild(safeText('div', stars(item.rating), 'review-stars'));
       card.appendChild(safeText('strong', item.name));
       card.appendChild(safeText('p', item.review));
-      if (item.photoUrl) {
-        const img = document.createElement('img');
-        img.className = 'review-photo';
-        img.src = item.photoUrl;
-        img.alt = 'Photo shared with a customer review';
-        img.loading = 'lazy';
-        card.appendChild(img);
-      }
       grid.appendChild(card);
     });
   }
@@ -187,27 +179,12 @@ footer{text-align:center;padding:30px 18px;background:#f5e8d8;border-top:1px sol
   form.addEventListener('submit', async event => {
     event.preventDefault();
     const data = new FormData(form);
-    const file = data.get('review-photo');
-    const payload = {
+      const payload = {
       name: String(data.get('customer-name') || '').trim(),
       rating: Number(data.get('rating')),
       review: String(data.get('review') || '').trim(),
       website: String(data.get('website') || '')
     };
-    if (file && file.size) {
-      if (file.size > 3 * 1024 * 1024) {
-        status.textContent = 'Please choose a photo smaller than 3 MB.';
-        return;
-      }
-      payload.photoName = file.name;
-      payload.photoType = file.type;
-      payload.photoData = await new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onload = () => resolve(String(reader.result).split(',')[1] || '');
-        reader.onerror = reject;
-        reader.readAsDataURL(file);
-      });
-    }
     submit.disabled = true;
     submit.textContent = 'Submitting…';
     status.textContent = '';
@@ -265,7 +242,7 @@ footer{text-align:center;padding:30px 18px;background:#f5e8d8;border-top:1px sol
   const delivery=form.elements.fulfillment.value==="delivery";deliveryFields.hidden=!delivery;deliveryAddress.required=delivery;deliveryCity.required=delivery;renderCart();
  }));
  function cartSubtotal(){return products.reduce((sum,p)=>sum+(cart[p.id]||0)*p.price,0);}
- function feePreview(){if(form.elements.fulfillment.value!=="delivery")return 0;const city=deliveryCity.value.trim().toLowerCase();return city==="methuen"||city==="lawrence"?4:null;}
+ function feePreview(){if(form.elements.fulfillment.value!=="delivery")return 0;const city=deliveryCity.value.trim().toLowerCase().replace(/,\s*(ma|massachusetts)$/,"").trim();return city==="methuen"||city==="lawrence"?4:null;}
  function renderProducts(){
   for(const [list,group] of [[cookieList,"cookie"],[rollList,"roll"]]){
    list.replaceChildren();
