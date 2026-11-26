@@ -74,11 +74,74 @@ details[open]>summary:after{content:"−"}
 footer{text-align:center;padding:30px 18px;background:#f5e8d8;border-top:1px solid var(--champagne);color:#8d6b68}
 .small{font:.82rem Arial,sans-serif;opacity:.8}
 @media(max-width:700px){section{padding:34px 17px}.product-list,.review-grid{grid-template-columns:1fr}.cart-panel,.checkout-panel{padding:16px}.intro{padding:48px 18px}}
+
+/* Boutique layout refresh — existing preorder and review behavior retained */
+body{background:#f9e8ed;color:#704d59;font-family:Georgia,'Times New Roman',serif}
+.wrap{max-width:1120px;background:#fff8fa;border-radius:0 0 24px 24px;box-shadow:0 12px 42px #9b66751c}
+.topline{background:linear-gradient(100deg,#e9a5b8,#f7d4de,#e9a5b8);color:#fffafc;padding:7px;letter-spacing:.12em;font-size:.68rem}
+header{padding:18px 20px 14px;background:#fff1f5;border:0}
+header .kicker{font-size:.58rem;letter-spacing:.18em}
+header h1{font-size:clamp(2.5rem,7vw,4.1rem);margin:5px 0;color:#b66f86;text-shadow:1px 1px #fff}
+header h1:before{content:"♡";font:1.2rem Georgia;color:#c9a86a;vertical-align:top;margin-right:8px}
+header .tag{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;margin:0;color:#9a6c7c}
+nav{justify-content:center;gap:clamp(8px,2vw,25px);padding:10px 12px;background:#fff8fa;border:0;border-top:1px solid #e8c6d0;border-bottom:1px solid #e8c6d0}
+nav a{border:0;border-radius:0;background:transparent;padding:7px 10px;font:.72rem Georgia,serif;color:#88596b}
+nav a:hover{background:#fce8ee;color:#a85e78}
+.intro{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;gap:0;padding:0;background:#f7dce5;text-align:center;min-height:205px}
+.hero-art{display:flex;align-items:center;justify-content:center;min-height:205px;background:radial-gradient(ellipse at 20% 25%,#fff7fa 0 8%,transparent 38%),radial-gradient(ellipse at 85% 75%,#e8a3b7 0 10%,transparent 42%),linear-gradient(135deg,#f4cbd7,#fbe9ee 45%,#e9b0c1);color:#fff9fb;font:clamp(3rem,8vw,5rem) 'Brush Script MT','Segoe Script',cursive;text-shadow:0 2px 8px #a55f7738;position:relative;overflow:hidden}
+.hero-art:before,.hero-art:after{content:"";position:absolute;width:150%;height:55px;border:1px solid #fff9fb80;border-radius:50%;transform:rotate(-22deg);box-shadow:0 8px 20px #fff8fa55}
+.hero-art:after{transform:rotate(18deg);width:130%;height:90px}
+.hero-copy{padding:28px 22px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(125deg,#f9e1e8,#f4c8d5 55%,#fbeef2)}
+.intro h2{font-size:clamp(2rem,4vw,3rem);line-height:1.02;margin:0 0 12px}
+.intro p{font-size:.88rem;line-height:1.5;margin:0 auto 14px;max-width:330px}
+.btn,.btn.primary{border:1px solid #c9a86a;background:#c47c92;color:#fff;border-radius:999px;padding:9px 20px;font:.72rem Georgia,serif;align-self:center}
+section{padding:28px 22px;border-bottom:1px solid #e8c6d0}
+.menu{background:#fff8fa}
+.section-title{font-size:clamp(1.9rem,4vw,2.7rem);margin:0 0 7px;color:#b36e85}
+.menu-accordions{max-width:900px;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px auto}
+.menu-accordions details,.product-category{border:1px solid #dcb8c5;border-radius:13px;background:#fff0f4;margin:0;overflow:hidden}
+.menu-accordions summary,.product-category summary{padding:10px 14px;font-size:1rem;background:#f8dfe7;color:#89576b}
+.menu-detail{padding:0 13px 12px}
+.price-row{font-size:.8rem;padding:8px 2px;border-color:#ecd5dc}
+.coming{margin:12px auto 0;padding:12px;border:1px solid #dcb8c5;background:#fff4f7;font-size:.85rem}
+.preorder{background:#fff3f6}
+.preorder-intro{font-size:.85rem;max-width:620px;margin:0 auto 16px}
+.product-category{max-width:1000px;margin:12px auto;background:#fff7f9}
+.product-category summary{text-align:center}
+.product-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:10px}
+.product-option{display:grid;grid-template-columns:minmax(0,1fr);align-content:start;gap:5px;padding:13px;border:1px solid #e7c8d2;border-radius:12px;background:#fffdfd;box-shadow:0 2px 8px #a66b7c10}
+.product-option h3{font-size:.95rem;margin:0;color:#8e596d}
+.product-option p{font-size:.75rem;margin:0 0 4px}
+.product-option select{font-size:.78rem;padding:9px;border-color:#e5bdca;background:#fff0f4}
+.product-option button,.cart-button{margin-top:3px;padding:9px 12px;background:#c87991;border:1px solid #c9a86a;font:.75rem Georgia,serif}
+.cart-panel,.checkout-panel,.review-form{border:1px solid #dfbdc8;border-radius:14px;background:#fffafd;box-shadow:0 3px 14px #a66b7c0c}
+.cart-panel,.checkout-panel{padding:18px}
+.checkout-panel label,.review-form label{color:#8e596d}
+.checkout-note{background:#fff0f4;border-color:#dfbdc8}
+.choice-row,.review-card{background:#fff3f6;border-color:#dfbdc8}
+.reviews{background:#fff8fa}
+.review-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.review-card{padding:13px;text-align:center}
+.review-stars{font-size:.95rem}
+.review-form h3{font-size:1.8rem}
+.tiktok{background:#fff4f7}
+footer{background:linear-gradient(110deg,#f8dce5,#fff0f4,#f4d4df);border-top:1px solid #dcb8c5;color:#895d6c;padding:24px 18px}
+@media(max-width:600px){
+ .intro{grid-template-columns:1fr 1fr;min-height:175px}.hero-art{min-height:175px;font-size:2.8rem}
+ .hero-copy{padding:16px 10px}.intro h2{font-size:1.75rem}.intro p{font-size:.72rem;line-height:1.35}
+ .menu-accordions{gap:8px}.menu-accordions summary{font-size:.88rem;padding:10px 6px}
+ .product-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:8px}
+ .product-option{padding:9px}.product-option h3{font-size:.82rem}.product-option select{font-size:.68rem;padding:7px}
+ .product-option button{font-size:.68rem;padding:8px 5px}
+ .review-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+ .review-card{padding:8px;font-size:.72rem;overflow-wrap:anywhere}.review-stars{font-size:.75rem}
+ section{padding:25px 12px}
+}
 </style></head><body><div class="wrap">
 <div class="topline">♡ &nbsp; SWEET TREATS. BIG LOVE. &nbsp; ♡</div>
 <header><div class="kicker">Small-batch homemade treats</div><h1>Baked By Netta</h1><p class="tag">Homemade with love, one sweet bite at a time</p></header>
 <nav><a href="#home">Home</a><a href="#menu">Menu</a><a href="#preorder">Preorder / Cart</a><a href="#reviews">Reviews</a></nav>
-<section class="intro" id="home"><h2>Homemade Treats,<br>Made with Love ♡</h2><p>Every treat is made with care and a little sweetness. Browse the menu and send a preorder request when you're ready.</p><a class="btn primary" href="#preorder">Shop the Menu ♡</a></section>
+<section class="intro" id="home"><div class="hero-art" aria-hidden="true">♡</div><div class="hero-copy"><h2>Welcome to<br>Baked By Netta ♡</h2><p>Homemade treats made with love, one sweet bite at a time.</p><a class="btn primary" href="#menu">Shop the Menu ♡</a></div></section>
 <section class="menu" id="menu"><h2 class="section-title">♡ Menu ♡</h2><div class="menu-accordions">
 <details><summary>Cookies</summary><div class="menu-detail">
 <div class="price-row"><span>Chocolate Chip, Sugar Cookie &amp; Churro</span><strong>4/$6 · 6/$9 · 12/$16</strong></div>
