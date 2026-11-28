@@ -16,7 +16,11 @@ const defaults = {
   classic2: { name: "Classic Cinnamon Roll — 2 rolls", price: 9, stock: 0 },
   classic4: { name: "Classic Cinnamon Roll — 4 rolls", price: 18, stock: 0 },
   biscoff2: { name: "Biscoff Cinnamon Roll — 2 rolls", price: 12, stock: 0 },
-  biscoff4: { name: "Biscoff Cinnamon Roll — 4 rolls", price: 19, stock: 0 }
+  biscoff4: { name: "Biscoff Cinnamon Roll — 4 rolls", price: 19, stock: 0 },
+  cupbiscoff4: { name: "Biscoff Cupcake — 4 cupcakes", price: 14, stock: 3 },
+  cupbiscoff6: { name: "Biscoff Cupcake — 6 cupcakes", price: 20, stock: 3 },
+  cupbanana4: { name: "Banana Pudding Cupcake — 4 cupcakes", price: 14, stock: 3 },
+  cupbanana6: { name: "Banana Pudding Cupcake — 6 cupcakes", price: 20, stock: 3 }
 };
 function authorized(request) { const secret=process.env.ADMIN_PASSWORD; return Boolean(secret && request.headers.get("authorization")==="Bearer "+secret); }
 export default async request => {
@@ -27,7 +31,7 @@ export default async request => {
   for(const blob of blobs){const item=await store.get(blob.key,{type:"json"});if(item)orders.push(item);}
   orders.sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt));
   const saved=await store.get("inventory",{type:"json"});
-  const inventory=Object.fromEntries(Object.entries(defaults).map(([id,p])=>[id,{...p,stock:Number.isInteger(Number(saved?.[id]?.stock))&&Number(saved[id].stock)>=0?Number(saved[id].stock):0}]));
+  const inventory=Object.fromEntries(Object.entries(defaults).map(([id,p])=>[id,{...p,stock:Number.isInteger(Number(saved?.[id]?.stock))&&Number(saved[id].stock)>=0?Number(saved[id].stock):p.stock}]));
   return reply({orders,inventory});
  }
  if(request.method==="POST"){
@@ -45,8 +49,8 @@ export default async request => {
    if(status==="Confirmed" && !order.stockDeducted){
     const current=await store.get("inventory",{type:"json"})||{},needed={};
     for(const item of order.items||[]){const qty=Number(item.quantity);if(!defaults[item.id]||!Number.isInteger(qty)||qty<1)return reply({error:"Invalid order item."},400);needed[item.id]=(needed[item.id]||0)+qty;}
-    for(const [id,qty] of Object.entries(needed)){if(Number(current[id]?.stock||0)<qty)return reply({error:defaults[id].name+" has insufficient stock."},409);}
-    for(const [id,qty] of Object.entries(needed)){current[id]={...defaults[id],stock:Number(current[id].stock)-qty};}
+    for(const [id,qty] of Object.entries(needed)){if(Number(current[id]?.stock??defaults[id].stock)<qty)return reply({error:defaults[id].name+" has insufficient stock."},409);}
+    for(const [id,qty] of Object.entries(needed)){current[id]={...defaults[id],stock:Number(current[id]?.stock??defaults[id].stock)-qty};}
     await store.setJSON("inventory",current);order.stockDeducted=true;
    }
    order.status=status;await store.setJSON(key,order);return reply({ok:true,order});

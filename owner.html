@@ -25,7 +25,11 @@ button{padding:10px 15px;border:1px solid var(--champagne);border-radius:20px;ba
   churro4:"Churro Cookie — 4 cookies",churro6:"Churro Cookie — 6 cookies",churro12:"Churro Cookie — 12 cookies",
   coffeecake4:"Coffee Cake Cookie — 4 cookies",coffeecake6:"Coffee Cake Cookie — 6 cookies",coffeecake12:"Coffee Cake Cookie — 12 cookies",
   classic2:"Classic Cinnamon Roll — 2 rolls",classic4:"Classic Cinnamon Roll — 4 rolls",
-  biscoff2:"Biscoff Cinnamon Roll — 2 rolls",biscoff4:"Biscoff Cinnamon Roll — 4 rolls"
+  biscoff2:"Biscoff Cinnamon Roll — 2 rolls",biscoff4:"Biscoff Cinnamon Roll — 4 rolls",
+  cupbiscoff4:"Biscoff Cupcake — 4 cupcakes",
+  cupbiscoff6:"Biscoff Cupcake — 6 cupcakes",
+  cupbanana4:"Banana Pudding Cupcake — 4 cupcakes",
+  cupbanana6:"Banana Pudding Cupcake — 6 cupcakes"
  };
  async function api(method="GET",body){
   const r=await fetch("/.netlify/functions/admin",{method,headers:{"Authorization":"Bearer "+password,"Content-Type":"application/json"},body:body?JSON.stringify(body):undefined});

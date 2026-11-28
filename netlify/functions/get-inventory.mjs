@@ -16,7 +16,11 @@ const defaults = {
   classic2: { name: "Classic Cinnamon Roll — 2 rolls", price: 9, stock: 0 },
   classic4: { name: "Classic Cinnamon Roll — 4 rolls", price: 18, stock: 0 },
   biscoff2: { name: "Biscoff Cinnamon Roll — 2 rolls", price: 12, stock: 0 },
-  biscoff4: { name: "Biscoff Cinnamon Roll — 4 rolls", price: 19, stock: 0 }
+  biscoff4: { name: "Biscoff Cinnamon Roll — 4 rolls", price: 19, stock: 0 },
+  cupbiscoff4: { name: "Biscoff Cupcake — 4 cupcakes", price: 14, stock: 3 },
+  cupbiscoff6: { name: "Biscoff Cupcake — 6 cupcakes", price: 20, stock: 3 },
+  cupbanana4: { name: "Banana Pudding Cupcake — 4 cupcakes", price: 14, stock: 3 },
+  cupbanana6: { name: "Banana Pudding Cupcake — 6 cupcakes", price: 20, stock: 3 }
 };
 
 export default async request => {
@@ -26,7 +30,7 @@ export default async request => {
     const saved = await store.get("inventory", { type: "json" });
     const inventory = Object.fromEntries(Object.entries(defaults).map(([id, product]) => [id, {
       ...product,
-      stock: Number.isInteger(Number(saved?.[id]?.stock)) && Number(saved[id].stock) >= 0 ? Number(saved[id].stock) : 0
+      stock: Number.isInteger(Number(saved?.[id]?.stock)) && Number(saved[id].stock) >= 0 ? Number(saved[id].stock) : product.stock
     }]));
     return Response.json({ inventory }, { headers: { "Cache-Control": "no-store" } });
   } catch {

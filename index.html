@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f7dce5"><meta name="description" content="Baked By Netta — homemade cookies and cinnamon rolls, baked with love.">
+<meta name="theme-color" content="#f7dce5"><meta name="description" content="Baked By Netta — homemade cookies, cinnamon rolls and cupcakes, baked with love.">
 <title>Baked By Netta | Homemade with Love</title>
 <style>
 :root{--blush:#f7dce5;--pink:#e9a9bd;--rose:#b96f86;--champagne:#c9a86a;--ink:#654b50;--paper:#fffaf9;--pale:#fff0f4}
@@ -168,11 +168,13 @@ footer{background:linear-gradient(110deg,#f8dce5,#fff0f4,#f4d4df);border-top:1px
 <div class="price-row"><span>Classic Cinnamon Rolls</span></div>
 <div class="price-row"><span>Biscoff Cinnamon Rolls</span></div>
 </div></details>
+<details><summary>Gourmet Cupcakes</summary><div class="menu-detail"><div class="price-row"><span>Biscoff Cupcakes</span></div><div class="price-row"><span>Banana Pudding Cupcakes</span></div><div class="price-row"><span>4-pack — $14 · 6-pack — $20</span></div></div></details>
 </div><div class="coming"><strong>More menu items coming soon ♡</strong></div></section>
 <section class="preorder" id="preorder"><h2 class="section-title">♡ Preorder Your Treats ♡</h2>
 <p class="preorder-intro">Choose your favorites, select a package size, and send your preorder request.</p>
 <div class="product-category"><details><summary>Cookies</summary><div class="product-list" id="cookie-products"></div></details></div>
 <div class="product-category"><details><summary>Cinnamon Rolls</summary><div class="product-list" id="roll-products"></div></details></div>
+<div class="product-category"><details><summary>Gourmet Cupcakes</summary><div class="product-list" id="cupcake-products"></div></details></div>
 <div class="cart-panel"><h3 class="section-title" style="font-size:2.2rem">♡ Your Cart ♡</h3><div id="cart-items">Your cart is empty.</div><p class="cart-total"><strong>Subtotal: <span id="cart-total">$0.00</span></strong></p><p id="delivery-total-note" class="small">Delivery fee is calculated at checkout.</p><p class="cart-total" aria-live="polite"><strong>Estimated total: <span id="checkout-total">$0.00</span></strong></p></div>
 <form class="checkout-panel" id="preorder-form">
 <h3 class="section-title" style="font-size:2.2rem">♡ Your Details ♡</h3>
@@ -308,7 +310,11 @@ footer{background:linear-gradient(110deg,#f8dce5,#fff0f4,#f4d4df);border-top:1px
   {id:"classic2",name:"Classic Cinnamon Roll",size:"2 rolls",price:9,group:"roll"},
   {id:"classic4",name:"Classic Cinnamon Roll",size:"4 rolls",price:18,group:"roll"},
   {id:"biscoff2",name:"Biscoff Cinnamon Roll",size:"2 rolls",price:12,group:"roll"},
-  {id:"biscoff4",name:"Biscoff Cinnamon Roll",size:"4 rolls",price:19,group:"roll"}
+  {id:"biscoff4",name:"Biscoff Cinnamon Roll",size:"4 rolls",price:19,group:"roll"},
+  {id:"cupbiscoff4",name:"Biscoff Cupcake",size:"4 cupcakes",price:14,group:"cupcake"},
+  {id:"cupbiscoff6",name:"Biscoff Cupcake",size:"6 cupcakes",price:20,group:"cupcake"},
+  {id:"cupbanana4",name:"Banana Pudding Cupcake",size:"4 cupcakes",price:14,group:"cupcake"},
+  {id:"cupbanana6",name:"Banana Pudding Cupcake",size:"6 cupcakes",price:20,group:"cupcake"}
  ];
  const cart={};let inventory={};
  const cookieList=document.getElementById("cookie-products"),rollList=document.getElementById("roll-products");
@@ -327,7 +333,7 @@ footer{background:linear-gradient(110deg,#f8dce5,#fff0f4,#f4d4df);border-top:1px
  function cartSubtotal(){return products.reduce((sum,p)=>sum+(cart[p.id]||0)*p.price,0);}
  function feePreview(){if(form.elements.fulfillment.value!=="delivery")return 0;const city=deliveryCity.value.trim().toLowerCase().replace(/,\s*(ma|massachusetts)$/,"").trim();return city==="methuen"||city==="lawrence"?4:null;}
  function renderProducts(){
-  for(const [list,group] of [[cookieList,"cookie"],[rollList,"roll"]]){
+  for(const [list,group] of [[cookieList,"cookie"],[rollList,"roll"],[document.getElementById("cupcake-products"),"cupcake"]]){
    list.replaceChildren();
    const grouped=[...new Set(products.filter(p=>p.group===group).map(p=>p.name))];
    grouped.forEach(name=>{
@@ -361,7 +367,7 @@ footer{background:linear-gradient(110deg,#f8dce5,#fff0f4,#f4d4df);border-top:1px
  deliveryCity.addEventListener("input",renderCart);
  async function loadInventory(){
   try{const r=await fetch("/.netlify/functions/get-inventory",{cache:"no-store"});const data=await r.json();if(!r.ok)throw new Error();inventory=data.inventory||{};renderProducts();renderCart();}
-  catch{cookieList.textContent="Availability is temporarily unavailable. Please try again shortly.";rollList.textContent="";}
+  catch{cookieList.textContent="Availability is temporarily unavailable. Please try again shortly.";rollList.textContent="";document.getElementById("cupcake-products").textContent="";}
  }
  form.addEventListener("submit",async e=>{
   e.preventDefault();status.textContent="";

@@ -18,7 +18,11 @@ const defaults = {
   classic2: { name: "Classic Cinnamon Roll — 2 rolls", price: 9, stock: 0 },
   classic4: { name: "Classic Cinnamon Roll — 4 rolls", price: 18, stock: 0 },
   biscoff2: { name: "Biscoff Cinnamon Roll — 2 rolls", price: 12, stock: 0 },
-  biscoff4: { name: "Biscoff Cinnamon Roll — 4 rolls", price: 19, stock: 0 }
+  biscoff4: { name: "Biscoff Cinnamon Roll — 4 rolls", price: 19, stock: 0 },
+  cupbiscoff4: { name: "Biscoff Cupcake — 4 cupcakes", price: 14, stock: 3 },
+  cupbiscoff6: { name: "Biscoff Cupcake — 6 cupcakes", price: 20, stock: 3 },
+  cupbanana4: { name: "Banana Pudding Cupcake — 4 cupcakes", price: 14, stock: 3 },
+  cupbanana6: { name: "Banana Pudding Cupcake — 6 cupcakes", price: 20, stock: 3 }
 };
 function localDateInBoston() {
   return new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
@@ -36,7 +40,7 @@ export default async request => {
   const deliveryCity = String(data.deliveryCity || "").trim().slice(0,80);
   const deliveryAddress = String(data.deliveryAddress || "").trim().slice(0,180);
   const items = Array.isArray(data.items) ? data.items : [];
-  if (!name || !phone || !/^\d{4}-\d{2}-\d{2}$/.test(pickupDate) || !["pickup","delivery"].includes(fulfillment) || !items.length || items.length > 16) {
+  if (!name || !phone || !/^\d{4}-\d{2}-\d{2}$/.test(pickupDate) || !["pickup","delivery"].includes(fulfillment) || !items.length || items.length > Object.keys(defaults).length) {
     return reply({ error: "Please enter your name, phone number, preferred date, fulfillment method, and at least one item." }, 400);
   }
   if (pickupDate < addDays(localDateInBoston(), 2)) return reply({ error: "Please choose a preferred date at least 2 days in advance." }, 400);
@@ -46,7 +50,7 @@ export default async request => {
   const cleanItems = []; let subtotal = 0;
   for (const requested of items) {
     const key = String(requested.id || ""), qty = Number(requested.quantity), product = defaults[key];
-    const stock = Number(saved?.[key]?.stock || 0);
+    const stock = Number(saved?.[key]?.stock ?? product?.stock ?? 0);
     if (!product || !Number.isInteger(qty) || qty < 1 || qty > 20) return reply({ error: "One of the selected items is invalid." }, 400);
     if (stock < qty) return reply({ error: product.name + " does not have enough availability. Please update your cart." }, 409);
     cleanItems.push({ id:key, name:product.name, quantity:qty, unitPrice:product.price, lineTotal:product.price*qty });
